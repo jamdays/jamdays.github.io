@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stlyesheet" href="style.css">
+		<link rel="stylesheet" href="style.css">
 		<title>Boggle</title>
 	</head>
 	<body>
@@ -9,12 +9,39 @@
 		<p>A Word Search, but more fun because you can choose the words and the letters don't have
 		to be in a straight line</p>
 		<hr>
-		<h3>Rules (not official, I just wrote this from memory</h3>
+		<h3>Rules (not official, I just wrote this from memory)</h3>
 		<ol type="1">
 			<li>The word has to be longer than 2 charachters</li>
 			<li>No reusing letter blocks in a word</li>
 			<li>Adjacent letters in a word have to <br> 
 				be adjacent on the board (including diagonals)</li>
+			<li> Also, the dictionary I am using doesn't contain all words! <br>
+				in particular, I found a problem with it missing a lot of plurals, sorry!</li>
 		</ol>
+		<hr>
+		<section>
+			<div class=boggleboard>
+				<div data-cell-index="0" class=cell></div>
+				<div data-cell-index="1" class=cell></div>
+				<div data-cell-index="2" class=cell></div>
+				<div data-cell-index="3" class=cell></div>
+				<div data-cell-index="4" class=cell></div>
+				<div data-cell-index="5" class=cell></div>
+				<div data-cell-index="6" class=cell></div>
+				<div data-cell-index="7" class=cell></div>
+				<div data-cell-index="8" class=cell></div>
+				<div data-cell-index="9" class=cell></div>
+				<div data-cell-index="10" class=cell></div>
+				<div data-cell-index="11" class=cell></div>
+				<div data-cell-index="12" class=cell></div>
+				<div data-cell-index="13" class=cell></div>
+				<div data-cell-index="14" class=cell></div>
+				<div data-cell-index="15" class=cell></div>
+			</div>
+			<div class=paper>
+			</div>
+		</section>
+		<input id="wordGuess">
+	<script src="./boggle.js"></script>
 	</body>
 </html>
