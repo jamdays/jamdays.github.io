@@ -35,7 +35,7 @@ const paper = document.querySelector(".paper");
 let input = document.getElementById("wordGuess");
 function checkWord() {
 	let userInput = document.querySelector("#wordGuess").value;
-	if (isValid(userInput) && dictionary.has(userInput)){
+	if (isValid(userInput) && dictionary.has(userInput.toLowerCase())){
 		paper.innerHTML += userInput + "<br>" ;
 	}
 	document.querySelector("#wordGuess").value = "";
