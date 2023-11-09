@@ -23,7 +23,7 @@ ol, ul {
 section {
 	display: flex;
 	background-color: #A1662F;
-	width: 50%;
+	width: 1000px;
 	height: 500px;
 	margin: auto;
 	margin-top: 50px;
@@ -54,7 +54,7 @@ section {
 .paper {
 	rotate: -10deg; 
 	background-color: #f2eecb;
-	width: 30%;
+	width: 300px;
 	margin: auto;
 	height: 400px;
 }
