@@ -15,20 +15,22 @@ heights.push(0);
 function dropdown(c){
 	const elements = document.getElementsByClassName("top");
 	const goal = document.getElementById("" + (heights[c]*7 + c))
+	const board = document.getElementsByClassName("board")[0];
 	let element = elements[elements.length -1 -c];
-	t = element.getBoundingClientRect().top;
-	goal.style.top = goal.getBoundingClientRect().top + "px";
+	t = board.getBoundingClientRect().top;
+	let goalTop = goal.getBoundingClientRect().top;
+	let pos = t;
+	let start = t;
 	element.style.top = t + "px";
 	t = element.style.top;
-	let start = parseFloat(t.substring(0, element.style.top.length-2));
-	let pos = parseFloat(t.substring(0, element.style.top.length-2));
 	clearInterval(id);
 	element.style.left = goal.getBoundingClientRect().left  + "px";
 	console.log(element.style.left + "LEFT");
-	id = setInterval(frame, 10);
+	id = setInterval(frame, 3);
 	element.style.backgroundColor = turn ? '#dbeb34': '#e03809' ;
 	function frame(){
-		let goalTop = parseFloat(goal.style.top.substring(0, goal.style.top.length -2));	 
+		let increment = 1;
+		console.log(pos + " " + goalTop);
 		if (pos >= goalTop){
 			element.style.top = start + 'px';
 			goal.style.backgroundColor = turn ? "#e03809" : "#dbeb34";
@@ -36,7 +38,8 @@ function dropdown(c){
 			clearInterval(id); 
 		}
 		else {
-			pos++;
+			increment *= 2;
+			pos += increment;
 			element.style.top = pos + 'px';
 		}
 	}
