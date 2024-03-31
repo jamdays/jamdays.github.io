@@ -21,26 +21,26 @@ ol, ul {
 	margin: auto;
 	margin-top: 100px;
 	margin-bottom: 150px;
-	width: 800px;
-	height: 800px;
+	width: 700px;
+	height: 700px;
 	padding: 30px 35px;
 }
 
 .cell{
 	position: relative;
 	background-color: #702906;
-	width: 80px;
-	height: 80px;
+	width: 70px;
+	height: 70px;
 }
 .hwall{
 	position: relative;
-	width: 80px;
+	width: 70px;
 	height: 10px;
 	background-color: #380707;
 }
 .vwall{
 	position: relative;
-	height: 80px;
+	height: 70px;
 	width: 10px;
 	background-color: #380707;
 }
@@ -53,8 +53,8 @@ ol, ul {
 .a_pawn{
 	margin: auto;
 	margin-top: 5px; 
-	width: 66px;
-	height: 66px;
+	width: 56px;
+	height: 56px;
 	border-radius: 100%;
 	background-color: #1c0101; 
 	border-style: solid;
@@ -64,8 +64,8 @@ ol, ul {
 .b_pawn{
 	margin: auto;
 	margin-top: 5px;
-	width: 66px;
-	height: 66px;
+	width: 56px;
+	height: 56px;
 	border-radius: 100%;
 	background-color: #705151; 
 	border-style: solid;
