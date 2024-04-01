@@ -11,7 +11,18 @@ let p_text = {false: p_one, true: p_two};
 let demo_text = {false: '<div class="a_pawn" style="opacity:.5;"></div>', true: '<div class="b_pawn" style="opacity:.5;"></div>'};
 document.getElementById('' + c_to_id(one_pos)).innerHTML = p_one;
 document.getElementById('' + c_to_id(two_pos)).innerHTML = p_two;
+let walls_one = '';
+let walls_two = '';
+let walls_o_left = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let walls_t_left = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let walls_left = {false: walls_o_left, true: walls_t_left}; 
 
+for (let i = 0; i < 10; i++){
+	walls_one += '<div class="wall_o" style="rotate:'+(Math.floor(Math.random()*90) - 45)+'deg"></div>\n';
+	walls_two += '<div class="wall_t" style="rotate:'+(Math.floor(Math.random()*90) - 45)+'deg"></div>\n';
+}
+document.getElementsByClassName("wall_holder_one")[0].innerHTML = walls_one;
+document.getElementsByClassName("wall_holder_two")[0].innerHTML = walls_two;
 
 function canVisit(v, w){
 	return !(walls_placed.has(wallBetween(v, w)));
@@ -116,10 +127,11 @@ function one_can_win(pos){
 function can_move(x, y){
 	return x[0] > -1 && x[1] > -1 && y[0] > -1 && y[1] > -1 && x[0] < 9 && x[1] < 9 && y[0] < 9 && y[1] < 9 && canVisit(x, y);
 }
-
-
+function isWon(){
+	return p_pos[false][0] == 0 || p_pos[true][0] == 8;
+}
 function placeWall(id){
-	if (!walls[turn]){
+	if (!walls[turn] || isWon()){
 		return;
 	}
 	if ((Math.floor(id/17))%2 == 1 && (id+1)%17 != 0){
@@ -166,13 +178,24 @@ function placeWall(id){
 			document.getElementById("" + (id + i*17)).style.opacity = '1';
 		}
 	}
+	j = Math.floor(walls_left[turn].length*Math.random());
+	let idx = walls_left[turn][j]; 	
+	elements = document.getElementsByClassName({false: 'wall_o', true: 'wall_t'}[turn]);
+	elements[idx].style.opacity = '0';
+	let new_walls_left =[];
+	for (let i = 0; i < walls_left[turn].length; i++){
+		if (i != j)
+			new_walls_left.push(walls_left[turn][i]);
+
+	}
+	walls_left[turn] = new_walls_left;
 	walls[turn]--;
 	turn = !turn;
 }
 
 
 function demoWall(id){
-	if (!walls[turn]){
+	if (!walls[turn] || isWon()){
 		return;
 	}
 	if ((Math.floor(id/17))%2 == 1 && (id+1)%17 != 0){
@@ -199,7 +222,7 @@ function demoWall(id){
 
 
 function undemoWall(id){
-	if (!walls[turn]){
+	if (!walls[turn] || isWon()){
 		return;
 	}
 	if ((Math.floor(id/17))%2 == 1 && (id+1)%17 != 0){
@@ -225,6 +248,23 @@ function undemoWall(id){
 }
 
 function movePawn(id){
+	if (isWon())
+		return;
+	if (id_to_c(id)[0] == p_pos[turn][0] && id_to_c(id)[1] == p_pos[turn][1])
+		return;
+	if (id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1])
+		return;
+	if (canVisit(p_pos[turn], p_pos[!turn])){
+		if (canVisit(p_pos[!turn], id_to_c(id))){
+			document.getElementById('' + id).innerHTML = p_text[turn];
+			document.getElementById('' + c_to_id(p_pos[turn])).innerHTML = '';
+			p_pos[turn] = id_to_c(id);
+			one_pos = p_pos[false];
+			two_pos = p_pos[true];
+			turn = !turn;
+			return;
+		}
+	}
 	if (canVisit(p_pos[turn], id_to_c(id))){
 		document.getElementById('' + id).innerHTML = p_text[turn];
 		document.getElementById('' + c_to_id(p_pos[turn])).innerHTML = '';
@@ -233,18 +273,34 @@ function movePawn(id){
 		two_pos = p_pos[true];
 		turn = !turn;
 	}
-
-		
 }
 
 function demoPawn(id){
+	if (isWon())
+		return;
+	if (id_to_c(id)[0] == p_pos[turn][0] && id_to_c(id)[1] == p_pos[turn][1])
+		return;
 	if (canVisit(p_pos[turn], id_to_c(id)) && !(id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1]))
 		document.getElementById('' + id).innerHTML = demo_text[turn];		
+	if (canVisit(p_pos[turn], p_pos[!turn])){
+		if (canVisit(p_pos[!turn], id_to_c(id))){
+			document.getElementById('' + id).innerHTML = demo_text[turn];
+		}
+	}
 }
 
 function undemoPawn(id){
+	if (isWon())
+		return;
+	if (id_to_c(id)[0] == p_pos[turn][0] && id_to_c(id)[1] == p_pos[turn][1])
+		return;
 	if (canVisit(p_pos[turn], id_to_c(id)) && !(id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1]))
 		document.getElementById('' + id).innerHTML = '';		
+	if (canVisit(p_pos[turn], p_pos[!turn])){
+		if (canVisit(p_pos[!turn], id_to_c(id))){
+			document.getElementById('' + id).innerHTML = '';
+		}
+	}
 }
 
 let walls_from_doc= document.getElementsByClassName("hwall");

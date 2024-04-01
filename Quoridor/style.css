@@ -18,12 +18,55 @@ ol, ul {
 	display: grid;
 	grid-template-columns: repeat(17, auto);
 	background-color: #380707;
-	margin: auto;
 	margin-top: 100px;
 	margin-bottom: 150px;
 	width: 700px;
 	height: 700px;
 	padding: 30px 35px;
+}
+
+.wall_o {
+	margin: auto;
+	background-color: #7d4728;	
+	border-style: solid;
+	border-width: 2px;
+	border-color: #54301c;
+	position: relative;
+	height: 70px;
+	width: 150px; 
+}
+
+.wall_t {
+	margin: auto;
+	background-color: #7d4728;	
+	position: relative;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #54301c;
+	height: 70px;
+	width: 150px; 
+}
+.wall_holder_two {
+	align-items: center;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	width: 300px;
+	height: 700px;
+}
+.wall_holder_one {
+	align-items: center;
+	margin-top: 100px;
+	margin-bottom: 150px;
+	width: 300px;
+	height: 700px;
+}
+
+.game_area {
+	margin: auto;
+	width: 1300px;
+	height: 700px;
+	display: flex;
+
 }
 
 .cell{
