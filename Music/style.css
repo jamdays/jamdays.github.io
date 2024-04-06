@@ -21,3 +21,12 @@ ol, ul {
 	text-align: center;
 }
 
+.note {
+	background-color: #ccca68;
+	position: absolute;
+	top: 100px;
+	right: 100;
+	width: 200px;
+	height: 200px;
+}
+

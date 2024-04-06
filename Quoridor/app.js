@@ -247,6 +247,14 @@ function undemoWall(id){
 	}
 }
 
+function minus(v, w){
+	return [(v[0] - w[0]), (v[1] - w[1])];
+}
+
+function plus(v, w){
+	return [(v[0] + w[0]), (v[1] + w[1])];
+}
+
 function movePawn(id){
 	if (isWon())
 		return;
@@ -255,7 +263,20 @@ function movePawn(id){
 	if (id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1])
 		return;
 	if (canVisit(p_pos[turn], p_pos[!turn])){
-		if (canVisit(p_pos[!turn], id_to_c(id))){
+		side_c =  minus(p_pos[!turn], minus(p_pos[turn], p_pos[!turn]))
+		if(canVisit(p_pos[!turn], side_c)){
+			if (id_to_c(id)[0] == side_c[0] && id_to_c(id)[1] == side_c[1]){
+				document.getElementById('' + id).innerHTML = p_text[turn];
+				document.getElementById('' + c_to_id(p_pos[turn])).innerHTML = '';
+				p_pos[turn] = id_to_c(id);
+				one_pos = p_pos[false];
+				two_pos = p_pos[true];
+				turn = !turn;
+				return;
+			}
+			return;
+		}
+		else if (canVisit(p_pos[!turn], id_to_c(id))){
 			document.getElementById('' + id).innerHTML = p_text[turn];
 			document.getElementById('' + c_to_id(p_pos[turn])).innerHTML = '';
 			p_pos[turn] = id_to_c(id);
@@ -283,7 +304,13 @@ function demoPawn(id){
 	if (canVisit(p_pos[turn], id_to_c(id)) && !(id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1]))
 		document.getElementById('' + id).innerHTML = demo_text[turn];		
 	if (canVisit(p_pos[turn], p_pos[!turn])){
-		if (canVisit(p_pos[!turn], id_to_c(id))){
+		side_c =  minus(p_pos[!turn], minus(p_pos[turn], p_pos[!turn]))
+		if(canVisit(p_pos[!turn], side_c)){
+			if (id_to_c(id)[0] == side_c[0] && id_to_c(id)[1] == side_c[1]){
+				document.getElementById('' + id).innerHTML = demo_text[turn];
+			}
+		}
+		else if (canVisit(p_pos[!turn], id_to_c(id))){
 			document.getElementById('' + id).innerHTML = demo_text[turn];
 		}
 	}
@@ -295,9 +322,15 @@ function undemoPawn(id){
 	if (id_to_c(id)[0] == p_pos[turn][0] && id_to_c(id)[1] == p_pos[turn][1])
 		return;
 	if (canVisit(p_pos[turn], id_to_c(id)) && !(id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1]))
-		document.getElementById('' + id).innerHTML = '';		
+		document.getElementById('' + id).innerHTML = '';	
 	if (canVisit(p_pos[turn], p_pos[!turn])){
-		if (canVisit(p_pos[!turn], id_to_c(id))){
+		side_c =  minus(p_pos[!turn], minus(p_pos[turn], p_pos[!turn]))
+		if(canVisit(p_pos[!turn], side_c)){
+			if (id_to_c(id)[0] == side_c[0] && id_to_c(id)[1] == side_c[1]){
+				document.getElementById('' + id).innerHTML = '';
+			}
+		}
+		else if (canVisit(p_pos[!turn], id_to_c(id))){
 			document.getElementById('' + id).innerHTML = '';
 		}
 	}
