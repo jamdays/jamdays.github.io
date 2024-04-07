@@ -274,7 +274,6 @@ function movePawn(id){
 				turn = !turn;
 				return;
 			}
-			return;
 		}
 		else if (canVisit(p_pos[!turn], id_to_c(id))){
 			document.getElementById('' + id).innerHTML = p_text[turn];
