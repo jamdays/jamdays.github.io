@@ -262,9 +262,9 @@ function movePawn(id){
 		return;
 	if (id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1])
 		return;
-	if (canVisit(p_pos[turn], p_pos[!turn])){
+	if (can_move(p_pos[turn], p_pos[!turn])){
 		side_c =  minus(p_pos[!turn], minus(p_pos[turn], p_pos[!turn]))
-		if(canVisit(p_pos[!turn], side_c)){
+		if(can_move(p_pos[!turn], side_c)){
 			if (id_to_c(id)[0] == side_c[0] && id_to_c(id)[1] == side_c[1]){
 				document.getElementById('' + id).innerHTML = p_text[turn];
 				document.getElementById('' + c_to_id(p_pos[turn])).innerHTML = '';
@@ -275,7 +275,7 @@ function movePawn(id){
 				return;
 			}
 		}
-		else if (canVisit(p_pos[!turn], id_to_c(id))){
+		else if (can_move(p_pos[!turn], id_to_c(id))){
 			document.getElementById('' + id).innerHTML = p_text[turn];
 			document.getElementById('' + c_to_id(p_pos[turn])).innerHTML = '';
 			p_pos[turn] = id_to_c(id);
@@ -285,7 +285,7 @@ function movePawn(id){
 			return;
 		}
 	}
-	if (canVisit(p_pos[turn], id_to_c(id))){
+	if (can_move(p_pos[turn], id_to_c(id))){
 		document.getElementById('' + id).innerHTML = p_text[turn];
 		document.getElementById('' + c_to_id(p_pos[turn])).innerHTML = '';
 		p_pos[turn] = id_to_c(id);
@@ -300,16 +300,16 @@ function demoPawn(id){
 		return;
 	if (id_to_c(id)[0] == p_pos[turn][0] && id_to_c(id)[1] == p_pos[turn][1])
 		return;
-	if (canVisit(p_pos[turn], id_to_c(id)) && !(id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1]))
+	if (can_move(p_pos[turn], id_to_c(id)) && !(id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1]))
 		document.getElementById('' + id).innerHTML = demo_text[turn];		
-	if (canVisit(p_pos[turn], p_pos[!turn])){
+	if (can_move(p_pos[turn], p_pos[!turn])){
 		side_c =  minus(p_pos[!turn], minus(p_pos[turn], p_pos[!turn]))
-		if(canVisit(p_pos[!turn], side_c)){
+		if(can_move(p_pos[!turn], side_c)){
 			if (id_to_c(id)[0] == side_c[0] && id_to_c(id)[1] == side_c[1]){
 				document.getElementById('' + id).innerHTML = demo_text[turn];
 			}
 		}
-		else if (canVisit(p_pos[!turn], id_to_c(id))){
+		else if (can_move(p_pos[!turn], id_to_c(id))){
 			document.getElementById('' + id).innerHTML = demo_text[turn];
 		}
 	}
@@ -320,16 +320,16 @@ function undemoPawn(id){
 		return;
 	if (id_to_c(id)[0] == p_pos[turn][0] && id_to_c(id)[1] == p_pos[turn][1])
 		return;
-	if (canVisit(p_pos[turn], id_to_c(id)) && !(id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1]))
+	if (can_move(p_pos[turn], id_to_c(id)) && !(id_to_c(id)[0] == p_pos[!turn][0] && id_to_c(id)[1] == p_pos[!turn][1]))
 		document.getElementById('' + id).innerHTML = '';	
-	if (canVisit(p_pos[turn], p_pos[!turn])){
+	if (can_move(p_pos[turn], p_pos[!turn])){
 		side_c =  minus(p_pos[!turn], minus(p_pos[turn], p_pos[!turn]))
-		if(canVisit(p_pos[!turn], side_c)){
+		if(can_move(p_pos[!turn], side_c)){
 			if (id_to_c(id)[0] == side_c[0] && id_to_c(id)[1] == side_c[1]){
 				document.getElementById('' + id).innerHTML = '';
 			}
 		}
-		else if (canVisit(p_pos[!turn], id_to_c(id))){
+		else if (can_move(p_pos[!turn], id_to_c(id))){
 			document.getElementById('' + id).innerHTML = '';
 		}
 	}
