@@ -106,7 +106,7 @@ let won = false;
 
 function nextTurn(){
 	for (let i = 0; i < 4; i++){
-		turn = (turn + i) % 4 + 1;
+		turn = (turn) % 4 + 1;
 		console.log(turn);
 		console.log(canPlay(turn));
 		if (canPlay(turn)){
