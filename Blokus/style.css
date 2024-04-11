@@ -26,7 +26,8 @@ ol, ul {
 	width: 300px;
 	height: 800px;
 }
-.peice_holder_b, .peice_holder_y, .peice_holder_r, .peice_holder_g{
+.piece_holder_b, .piece_holder_y, .piece_holder_r, .piece_holder_g{
+	z-index: 0;
 	width: 300px;
 	height: 400px;
 }
@@ -50,4 +51,17 @@ ol, ul {
 	height: 36px;
 }
 
+.tile{
+	position: relative;
+	background-color: #000000;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #000000;
+	width: 36px;
+	height: 36px;
+}
 
+.block{
+	z-index: 1;
+	position: absolute;
+}
