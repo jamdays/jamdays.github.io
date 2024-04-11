@@ -107,12 +107,36 @@ let won = false;
 function nextTurn(){
 	for (let i = 0; i < 4; i++){
 		turn = (turn + i) % 4 + 1;
+		console.log(turn);
+		console.log(canPlay(turn));
 		if (canPlay(turn)){
+			document.getElementById("wincard").innerHTML = "<p>" + winMessage() + "</p>"
 			return;
 		}
 	}
 	won = true;
+	document.getElementById("wincard").innerHTML = "<p>" + winMessage() + "</p>"
 	
+}
+
+function winMessage(){
+	let blks = document.getElementsByClassName("block");
+	let scores = [0, 0, 0, 0];
+	for (let i = 0; i < blks.length; i++){
+		let pid = parseInt(blks[i].id[1]);
+		let idx = parseInt(blks[i].id.slice(2));
+		for (let r = 0; r < PIECES[pid][idx].length; r++){
+			for (let c = 0; c < PIECES[pid][idx][r].length; c++){
+				if (PIECES[pid][idx][r][c] != 0){
+					scores[pid-1]++;
+				}
+			}
+		}
+	}
+	if (won){
+		return "DONE: RED: " + scores[0].toString() + " BLUE: " + scores[1].toString() + " YELLOW: " + scores[2].toString() + " GREEN: " + scores[3].toString();
+	}
+	return "RED: " + scores[0].toString() + " BLUE: " + scores[1].toString() + " YELLOW: " + scores[2].toString() + " GREEN: " + scores[3].toString();
 }
 
 function isValid(r, c){
@@ -245,7 +269,6 @@ function rotate(el){
 	let idx = parseInt(el.id.slice(2));
 	let pid = parseInt(el.id[1]);
 	let out = "";
-	console.log(event.button);
 	if (event.button == 0 && !event.shiftKey){
 		PIECES[pid][idx] = rotator(PIECES[pid][idx]);
 		let rep = PIECES[pid][idx][0].length.toString();
@@ -358,7 +381,7 @@ function place(id, r, c){
 				return;
 			}
 			if (board[r-i][c-j] != 0 && block[i][j] != 0){
-				console.log("FAIL 2")
+				return;
 			}
 			//the ifs are pretty ugly but I'm not desperate enough to make them into one if
 			if (block[i][j] != 0){
@@ -404,11 +427,9 @@ function place(id, r, c){
 			}
 		}
 	}
-	nextTurn();
-	console.log(turn);
-	console.log(won);
 	refreshBoard();
 	document.getElementById(id).remove();
+	nextTurn();
 }
 
 document.getElementsByClassName("piece_holder_b")[0].innerHTML = toPieces(2);
