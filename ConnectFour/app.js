@@ -2,6 +2,7 @@ let id = null;
 let turn = false;
 let won = false;
 let board = [];
+let animation_done = true;
 let heights = [];
 for (let i = 0; i < 6; i++){
 	board.push([]);
@@ -14,10 +15,10 @@ heights.push(0);
 
 function dropdown(c){
 	const elements = document.getElementsByClassName("top");
-	const goal = document.getElementById("" + (heights[c]*7 + c))
+	const goal = document.getElementById("" + (heights[c]*7 + c));
 	const board = document.getElementsByClassName("board")[0];
 	let element = elements[elements.length -1 -c];
-	t = board.getBoundingClientRect().top;
+	t = board.getBoundingClientRect().top + window.scrollY;
 	let goalTop = goal.getBoundingClientRect().top;
 	let pos = t;
 	let start = t;
@@ -26,16 +27,18 @@ function dropdown(c){
 	clearInterval(id);
 	element.style.left = goal.getBoundingClientRect().left  + "px";
 	console.log(element.style.left + "LEFT");
+	animation_done = false;
 	id = setInterval(frame, 3);
 	element.style.backgroundColor = turn ? '#dbeb34': '#e03809' ;
 	function frame(){
 		let increment = 1;
 		console.log(pos + " " + goalTop);
-		if (pos >= goalTop){
+		if (pos >= goalTop + window.scrollY){
 			element.style.top = start + 'px';
 			goal.style.backgroundColor = turn ? "#e03809" : "#dbeb34";
 			element.style.backgroundColor = '#e3e0c1';	
-			clearInterval(id); 
+			clearInterval(id);
+			animation_done = true;
 		}
 		else {
 			increment *= 2;
@@ -46,6 +49,9 @@ function dropdown(c){
 }
 
 function play(c){
+	if (!animation_done){
+		return;
+	}
 	if (heights[c] == board.length || won)
 		return;
 	board[heights[c]][c] = turn ? 1 : 2;
