@@ -70,6 +70,18 @@ ol, ul {
 	border-color: #003d1b;
 }
 
+.showstick {
+	margin: auto;
+	margin-top: 15px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	border: solid;
+	background-color: #027032;
+	border-color: #003d1b;
+	opacity: .5;
+}
+
 .hole {
 	margin: auto;
 	margin-top: 15px;
