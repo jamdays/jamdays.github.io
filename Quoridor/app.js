@@ -155,7 +155,7 @@ function placeWall(id){
 			document.getElementById("" + (id + i)).style.opacity = '1';
 		}
 	}
-	if ((Math.floor(id/17))%2 == 0 && (id/17) < 16){
+	else if ((Math.floor(id/17))%2 == 0 && (id/17) < 16){
 		for (i = 0; i < 3; i++){
 			if (walls_placed.has(id + i*17))
 				return;
@@ -177,6 +177,9 @@ function placeWall(id){
 			document.getElementById("" + (id + i*17)).style.backgroundColor = '#7d4728';
 			document.getElementById("" + (id + i*17)).style.opacity = '1';
 		}
+	}
+	else {
+		return;
 	}
 	j = Math.floor(walls_left[turn].length*Math.random());
 	let idx = walls_left[turn][j]; 	
