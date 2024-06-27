@@ -58,3 +58,16 @@ section {
 	margin: auto;
 	height: 400px;
 }
+.textbox {
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+	width: 70%;
+}
+
+.lr {
+	width: 100%;
+	display: flex;
+}
+
+
