@@ -1,0 +1,33 @@
+body {
+	background-color:#e3e0c1;
+	text-align: center;
+}
+p, h1, h2, h3, h4, h5, h6, li  {
+	font-family: courier;
+	color: #768c7c;
+}
+a {
+	font-family: courier;
+	color: #6682ad;
+}
+ol, ul {
+	display: inline-block;
+	text-align: left;
+}
+
+.cell {
+	z-index: 3;
+	width: 100px;
+	height: 100px;
+	background-color: white;
+
+}
+
+#board {
+	border-width: 2px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	width: 300px;
+	height: 300px;
+}
