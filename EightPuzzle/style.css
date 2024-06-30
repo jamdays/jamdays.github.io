@@ -15,7 +15,7 @@ ol, ul {
 	text-align: left;
 }
 
-.cell {
+.cell_lr .cell_y {
 	z-index: 3;
 	width: 100px;
 	height: 100px;
@@ -23,11 +23,18 @@ ol, ul {
 
 }
 
-#board {
-	border-width: 2px;
-	margin: auto;
+.board {
 	display: grid;
 	grid-template-columns: repeat(3, auto);
 	width: 300px;
 	height: 300px;
+}
+
+.bigboard {
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	width: 900px;
+	height: 900px;
+
 }
