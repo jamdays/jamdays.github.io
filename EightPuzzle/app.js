@@ -1,8 +1,8 @@
 let grids = {};
 let dims = 3;
 let won = {}
-let album_cells = ["lr", "y"];
-let albums = ["late registration", "yeezus"];
+let album_cells = ["lr", "y", "a"];
+let albums = ["late registration", "yeezus", "aquemini"];
 for (let j = 0; j < albums.length; j++){
 	let cells = document.getElementsByClassName(`cell_${album_cells[j]}`);
 	for (let i = 0; i < cells.length; i++){
@@ -23,6 +23,7 @@ for (let j = 0; j < albums.length; j++){
 
 function move(k, album){
 	if (won[album]){
+		document.getElementById(album).style.zIndex = 4;
 		return;
 	}
 	if (k % dims != dims-1){

@@ -15,7 +15,7 @@ ol, ul {
 	text-align: left;
 }
 
-.cell_lr .cell_y {
+.cell_lr .cell_y .cell_a{
 	z-index: 3;
 	width: 100px;
 	height: 100px;
