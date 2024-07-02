@@ -1,8 +1,8 @@
 let grids = {};
 let dims = 3;
 let won = {}
-let album_cells = ["lr", "y", "a"];
-let albums = ["late registration", "yeezus", "aquemini"];
+let album_cells = ["lr", "y", "a", "ksg", "ts", "tes", "gkmc", "8ah", "mbdtf"];
+let albums = ["late registration", "yeezus", "aquemini", "kids see ghosts", "the score", "the eminem show", "good kid maad city", "808s and heartbreak", "my beautiful dark twisted fantasy"];
 for (let j = 0; j < albums.length; j++){
 	let cells = document.getElementsByClassName(`cell_${album_cells[j]}`);
 	for (let i = 0; i < cells.length; i++){
