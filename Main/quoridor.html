@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../Quoridor/style.css">
+    <title>Quoridor</title>
+    <link rel="icon" href="../favicon.png" type="png">
+</head>
+<body>
+<a href="boardgames.html" style="position:absolute; left:20px; top:20px;">
+<img title="back to black" src="./back.png"  alt="Bye?" width=60px height=60px></a>
+                <a href="./index.html" style="position:absolute; left:100px; top:20px;">  
+<img title="going home already?" src="./home.png"  alt="Head Home?" width=60px height=60px></a>
+
+	<h1>Quoridor</h1>
+	<p>Get your litte guy to the other side first and you win</p>
+	<hr>
+	<h3 title="I like that this is numbered list because I choose which rules are most important"> 
+		Rules (unofficial)</h3>
+	<ol type="1">
+		<li>You can move left, right, forwards, or backwards, one square at a time</li>
+		<ol type="i">
+			<li> if you are next to your opponent you can jump over them</li>
+			<li> if there is a wall in that direction you can jump to their sides</li>
+		</ol>
+		<li>You can place a wall in between any tiles (that aren't taken already)</li>
+		<ol type="i">
+			<li>No jumping over walls</li>
+			<li>You always have to leave a path for the other player to reach the other side</li>
+		</ol>
+		<li>You win if you get to the other side before your opponent</li>
+	</ol>
+	<hr>
+<div class="game_area">
+<div class="wall_holder_one"></div>
+<div class="board">
+<div id="0" class="cell"></div>
+<div id="1" class="vwall"></div>
+<div id="2" class="cell"></div>
+<div id="3" class="vwall"></div>
+<div id="4" class="cell"></div>
+<div id="5" class="vwall"></div>
+<div id="6" class="cell"></div>
+<div id="7" class="vwall"></div>
+<div id="8" class="cell"></div>
+<div id="9" class="vwall"></div>
+<div id="10" class="cell"></div>
+<div id="11" class="vwall"></div>
+<div id="12" class="cell"></div>
+<div id="13" class="vwall"></div>
+<div id="14" class="cell"></div>
+<div id="15" class="vwall"></div>
+<div id="16" class="cell"></div>
+<div id="17" class="hwall"></div>
+<div id="18" class="smwall"></div>
+<div id="19" class="hwall"></div>
+<div id="20" class="smwall"></div>
+<div id="21" class="hwall"></div>
+<div id="22" class="smwall"></div>
+<div id="23" class="hwall"></div>
+<div id="24" class="smwall"></div>
+<div id="25" class="hwall"></div>
+<div id="26" class="smwall"></div>
+<div id="27" class="hwall"></div>
+<div id="28" class="smwall"></div>
+<div id="29" class="hwall"></div>
+<div id="30" class="smwall"></div>
+<div id="31" class="hwall"></div>
+<div id="32" class="smwall"></div>
+<div id="33" class="hwall"></div>
+<div id="34" class="cell"></div>
+<div id="35" class="vwall"></div>
+<div id="36" class="cell"></div>
+<div id="37" class="vwall"></div>
+<div id="38" class="cell"></div>
+<div id="39" class="vwall"></div>
+<div id="40" class="cell"></div>
+<div id="41" class="vwall"></div>
+<div id="42" class="cell"></div>
+<div id="43" class="vwall"></div>
+<div id="44" class="cell"></div>
+<div id="45" class="vwall"></div>
+<div id="46" class="cell"></div>
+<div id="47" class="vwall"></div>
+<div id="48" class="cell"></div>
+<div id="49" class="vwall"></div>
+<div id="50" class="cell"></div>
+<div id="51" class="hwall"></div>
+<div id="52" class="smwall"></div>
+<div id="53" class="hwall"></div>
+<div id="54" class="smwall"></div>
+<div id="55" class="hwall"></div>
+<div id="56" class="smwall"></div>
+<div id="57" class="hwall"></div>
+<div id="58" class="smwall"></div>
+<div id="59" class="hwall"></div>
+<div id="60" class="smwall"></div>
+<div id="61" class="hwall"></div>
+<div id="62" class="smwall"></div>
+<div id="63" class="hwall"></div>
+<div id="64" class="smwall"></div>
+<div id="65" class="hwall"></div>
+<div id="66" class="smwall"></div>
+<div id="67" class="hwall"></div>
+<div id="68" class="cell"></div>
+<div id="69" class="vwall"></div>
+<div id="70" class="cell"></div>
+<div id="71" class="vwall"></div>
+<div id="72" class="cell"></div>
+<div id="73" class="vwall"></div>
+<div id="74" class="cell"></div>
+<div id="75" class="vwall"></div>
+<div id="76" class="cell"></div>
+<div id="77" class="vwall"></div>
+<div id="78" class="cell"></div>
+<div id="79" class="vwall"></div>
+<div id="80" class="cell"></div>
+<div id="81" class="vwall"></div>
+<div id="82" class="cell"></div>
+<div id="83" class="vwall"></div>
+<div id="84" class="cell"></div>
+<div id="85" class="hwall"></div>
+<div id="86" class="smwall"></div>
+<div id="87" class="hwall"></div>
+<div id="88" class="smwall"></div>
+<div id="89" class="hwall"></div>
+<div id="90" class="smwall"></div>
+<div id="91" class="hwall"></div>
+<div id="92" class="smwall"></div>
+<div id="93" class="hwall"></div>
+<div id="94" class="smwall"></div>
+<div id="95" class="hwall"></div>
+<div id="96" class="smwall"></div>
+<div id="97" class="hwall"></div>
+<div id="98" class="smwall"></div>
+<div id="99" class="hwall"></div>
+<div id="100" class="smwall"></div>
+<div id="101" class="hwall"></div>
+<div id="102" class="cell"></div>
+<div id="103" class="vwall"></div>
+<div id="104" class="cell"></div>
+<div id="105" class="vwall"></div>
+<div id="106" class="cell"></div>
+<div id="107" class="vwall"></div>
+<div id="108" class="cell"></div>
+<div id="109" class="vwall"></div>
+<div id="110" class="cell"></div>
+<div id="111" class="vwall"></div>
+<div id="112" class="cell"></div>
+<div id="113" class="vwall"></div>
+<div id="114" class="cell"></div>
+<div id="115" class="vwall"></div>
+<div id="116" class="cell"></div>
+<div id="117" class="vwall"></div>
+<div id="118" class="cell"></div>
+<div id="119" class="hwall"></div>
+<div id="120" class="smwall"></div>
+<div id="121" class="hwall"></div>
+<div id="122" class="smwall"></div>
+<div id="123" class="hwall"></div>
+<div id="124" class="smwall"></div>
+<div id="125" class="hwall"></div>
+<div id="126" class="smwall"></div>
+<div id="127" class="hwall"></div>
+<div id="128" class="smwall"></div>
+<div id="129" class="hwall"></div>
+<div id="130" class="smwall"></div>
+<div id="131" class="hwall"></div>
+<div id="132" class="smwall"></div>
+<div id="133" class="hwall"></div>
+<div id="134" class="smwall"></div>
+<div id="135" class="hwall"></div>
+<div id="136" class="cell"></div>
+<div id="137" class="vwall"></div>
+<div id="138" class="cell"></div>
+<div id="139" class="vwall"></div>
+<div id="140" class="cell"></div>
+<div id="141" class="vwall"></div>
+<div id="142" class="cell"></div>
+<div id="143" class="vwall"></div>
+<div id="144" class="cell"></div>
+<div id="145" class="vwall"></div>
+<div id="146" class="cell"></div>
+<div id="147" class="vwall"></div>
+<div id="148" class="cell"></div>
+<div id="149" class="vwall"></div>
+<div id="150" class="cell"></div>
+<div id="151" class="vwall"></div>
+<div id="152" class="cell"></div>
+<div id="153" class="hwall"></div>
+<div id="154" class="smwall"></div>
+<div id="155" class="hwall"></div>
+<div id="156" class="smwall"></div>
+<div id="157" class="hwall"></div>
+<div id="158" class="smwall"></div>
+<div id="159" class="hwall"></div>
+<div id="160" class="smwall"></div>
+<div id="161" class="hwall"></div>
+<div id="162" class="smwall"></div>
+<div id="163" class="hwall"></div>
+<div id="164" class="smwall"></div>
+<div id="165" class="hwall"></div>
+<div id="166" class="smwall"></div>
+<div id="167" class="hwall"></div>
+<div id="168" class="smwall"></div>
+<div id="169" class="hwall"></div>
+<div id="170" class="cell"></div>
+<div id="171" class="vwall"></div>
+<div id="172" class="cell"></div>
+<div id="173" class="vwall"></div>
+<div id="174" class="cell"></div>
+<div id="175" class="vwall"></div>
+<div id="176" class="cell"></div>
+<div id="177" class="vwall"></div>
+<div id="178" class="cell"></div>
+<div id="179" class="vwall"></div>
+<div id="180" class="cell"></div>
+<div id="181" class="vwall"></div>
+<div id="182" class="cell"></div>
+<div id="183" class="vwall"></div>
+<div id="184" class="cell"></div>
+<div id="185" class="vwall"></div>
+<div id="186" class="cell"></div>
+<div id="187" class="hwall"></div>
+<div id="188" class="smwall"></div>
+<div id="189" class="hwall"></div>
+<div id="190" class="smwall"></div>
+<div id="191" class="hwall"></div>
+<div id="192" class="smwall"></div>
+<div id="193" class="hwall"></div>
+<div id="194" class="smwall"></div>
+<div id="195" class="hwall"></div>
+<div id="196" class="smwall"></div>
+<div id="197" class="hwall"></div>
+<div id="198" class="smwall"></div>
+<div id="199" class="hwall"></div>
+<div id="200" class="smwall"></div>
+<div id="201" class="hwall"></div>
+<div id="202" class="smwall"></div>
+<div id="203" class="hwall"></div>
+<div id="204" class="cell"></div>
+<div id="205" class="vwall"></div>
+<div id="206" class="cell"></div>
+<div id="207" class="vwall"></div>
+<div id="208" class="cell"></div>
+<div id="209" class="vwall"></div>
+<div id="210" class="cell"></div>
+<div id="211" class="vwall"></div>
+<div id="212" class="cell"></div>
+<div id="213" class="vwall"></div>
+<div id="214" class="cell"></div>
+<div id="215" class="vwall"></div>
+<div id="216" class="cell"></div>
+<div id="217" class="vwall"></div>
+<div id="218" class="cell"></div>
+<div id="219" class="vwall"></div>
+<div id="220" class="cell"></div>
+<div id="221" class="hwall"></div>
+<div id="222" class="smwall"></div>
+<div id="223" class="hwall"></div>
+<div id="224" class="smwall"></div>
+<div id="225" class="hwall"></div>
+<div id="226" class="smwall"></div>
+<div id="227" class="hwall"></div>
+<div id="228" class="smwall"></div>
+<div id="229" class="hwall"></div>
+<div id="230" class="smwall"></div>
+<div id="231" class="hwall"></div>
+<div id="232" class="smwall"></div>
+<div id="233" class="hwall"></div>
+<div id="234" class="smwall"></div>
+<div id="235" class="hwall"></div>
+<div id="236" class="smwall"></div>
+<div id="237" class="hwall"></div>
+<div id="238" class="cell"></div>
+<div id="239" class="vwall"></div>
+<div id="240" class="cell"></div>
+<div id="241" class="vwall"></div>
+<div id="242" class="cell"></div>
+<div id="243" class="vwall"></div>
+<div id="244" class="cell"></div>
+<div id="245" class="vwall"></div>
+<div id="246" class="cell"></div>
+<div id="247" class="vwall"></div>
+<div id="248" class="cell"></div>
+<div id="249" class="vwall"></div>
+<div id="250" class="cell"></div>
+<div id="251" class="vwall"></div>
+<div id="252" class="cell"></div>
+<div id="253" class="vwall"></div>
+<div id="254" class="cell"></div>
+<div id="255" class="hwall"></div>
+<div id="256" class="smwall"></div>
+<div id="257" class="hwall"></div>
+<div id="258" class="smwall"></div>
+<div id="259" class="hwall"></div>
+<div id="260" class="smwall"></div>
+<div id="261" class="hwall"></div>
+<div id="262" class="smwall"></div>
+<div id="263" class="hwall"></div>
+<div id="264" class="smwall"></div>
+<div id="265" class="hwall"></div>
+<div id="266" class="smwall"></div>
+<div id="267" class="hwall"></div>
+<div id="268" class="smwall"></div>
+<div id="269" class="hwall"></div>
+<div id="270" class="smwall"></div>
+<div id="271" class="hwall"></div>
+<div id="272" class="cell"></div>
+<div id="273" class="vwall"></div>
+<div id="274" class="cell"></div>
+<div id="275" class="vwall"></div>
+<div id="276" class="cell"></div>
+<div id="277" class="vwall"></div>
+<div id="278" class="cell"></div>
+<div id="279" class="vwall"></div>
+<div id="280" class="cell"></div>
+<div id="281" class="vwall"></div>
+<div id="282" class="cell"></div>
+<div id="283" class="vwall"></div>
+<div id="284" class="cell"></div>
+<div id="285" class="vwall"></div>
+<div id="286" class="cell"></div>
+<div id="287" class="vwall"></div>
+<div id="288" class="cell"></div>
+</div>
+<div class="wall_holder_two"></div>
+</div>
+<script src="../Quoridor/app.js"></script>
+</body>
+</html>
