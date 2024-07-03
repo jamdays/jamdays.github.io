@@ -435,6 +435,9 @@ function place(id, r, c){
 document.getElementsByClassName("piece_holder_b")[0].innerHTML = toPieces(2);
 document.getElementsByClassName("piece_holder_y")[0].innerHTML = toPieces(3);
 document.getElementsByClassName("piece_holder_r")[0].innerHTML = toPieces(1);
+if(sessionStorage.getItem("albums") != "true" && sessionStorage.getItem("boardgames") == "true"){
+	document.getElementsByClassName("piece_holder_g")[0].innerHTML = `<a href='./eightpuzzle.html' style="position:absolute; margin-right:120px">A</a>`;
+}
 document.getElementsByClassName("piece_holder_g")[0].innerHTML += toPieces(4);
 blocks = document.getElementsByClassName("block");
 for (let i = 0; i < blocks.length; i++){

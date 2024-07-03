@@ -1,3 +1,4 @@
+sessionStorage.setItem("albums", true);
 let grids = {};
 let dims = 3;
 let won = {}
@@ -24,6 +25,7 @@ for (let j = 0; j < albums.length; j++){
 function move(k, album){
 	if (won[album]){
 		document.getElementById(album).style.zIndex = 4;
+		document.getElementById(album).href = "./todo.html";
 		return;
 	}
 	if (k % dims != dims-1){
@@ -69,6 +71,6 @@ function refresh(album){
 	let isAlbum = (element) => element == album;
 	let cells = document.getElementsByClassName(`cell_${album_cells[albums.findIndex(isAlbum)]}`);
 	for (let i = 0; i < cells.length; i++){
-		cells[i].innerHTML = `<img src="./${album}/${grids[album][i]}.png" width=100px, height=100px>`
+		cells[i].innerHTML = `<img src="../EightPuzzle/${album}/${grids[album][i]}.png" width=100px, height=100px>`
 	}
 }

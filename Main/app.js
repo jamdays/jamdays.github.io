@@ -6,7 +6,12 @@ let elems = ["game", "videogames", "todo", "boardgames", "site"]
 let dictionary = new Set(elems);
 let word_dict = new Set(words);
 for (let i = 0; i < elems.length; i++){
-	document.querySelector("#" + elems[i]).style.visibility = "hidden";
+	if (sessionStorage.getItem(elems[i]) == "true"){
+		document.querySelector("#" + elems[i]).style.visibility = "visible";
+	}
+}
+if (sessionStorage.getItem("albums") == "true"){
+	document.querySelector("#albums").style.visibility = "visible";
 }
 let letters = ['B', 'O', 'A', 'R', 
 		'T', 'E', 'D', 'O',
@@ -28,6 +33,7 @@ let input = document.getElementById("wordGuess");
 function checkWord() {
 	let userInput = document.querySelector("#wordGuess").value;
 	if (dictionary.has(userInput.toLowerCase())){
+		sessionStorage.setItem(userInput.toLowerCase(), true);
 		document.querySelector("#" + userInput.toLowerCase()).style.visibility = "visible";
 	}
 	else if (isValid(userInput.toLowerCase()) && word_dict.has(userInput.toLowerCase())){
@@ -109,6 +115,4 @@ function isAdjacent(i, b, used){
 	}
 	return result; 
 }
-
-
 
