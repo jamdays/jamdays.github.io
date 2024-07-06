@@ -1,5 +1,4 @@
 const NOTES = [
-["Drive Slow", "Yeah, sometimes life just isn't something to rush through\nBut since I'm not like that I'm not gonna quote Ferris Bueller to get that\n It wasn't a good movie, I've seen it a million times, but even worse \nIn Real life\nBack to the song though, it really makes you feel like you wanna take a drive and blast it on the speakers\njust driving slow"],
 ["", ""],
 ["", ""],
 ["", ""],
@@ -11,48 +10,33 @@ const NOTES = [
 ["", ""]
 ]
 
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
+document.getElementsByClassName
 
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
 
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
+function dragDrop(el){
+	if (parseInt(el.id[1]) != turn){
+		return;
+	}
+	let rect = el.getBoundingClientRect();
+	offset = [rect.left - event.clientX, rect.top - event.clientY];
+	body.onmouseup = function(){drop(el)};
+	body.onmousemove = function(){drag(el, offset)};
 }
 
-const notes = document.getElementsByClassName("note");
-for (let i = 0; i < notes.length; i++){
-	dragElement(notes[i]);
+function drag(el, offset){
+	el.style.left = (event.clientX + window.scrollX + offset[0]) + "px";
+	el.style.top = (event.clientY + window.scrollY + offset[1]) +"px";
+}
+
+function drop(el){
+	let cells = document.getElementsByClassName("cell");
+	let rect = el.getBoundingClientRect();
+	for (let i = 0; i < cells.length; i++){
+		let cell = cells[i].getBoundingClientRect();
+		if (Math.abs(rect.left - cell.left) < 20 && Math.abs(rect.top - cell.top) < 20){
+			place(el.id, Math.floor(parseInt(cells[i].id)/20), parseInt(cells[i].id)%20);
+		}
+	}
+	body.onmouseup = null;
+	body.onmousemove = null;
 }

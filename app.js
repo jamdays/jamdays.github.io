@@ -85,7 +85,7 @@ function preview(ids, id){
 		}
 		if (c == 1){
 			won = true;
-			document.getElementsByClassName("welcome")[0].innerHTML = "<a href='./Main/index.html'><b>WVBGS OIOAI RDAMT DEREE SOD..</b></a>"
+			document.getElementsByClassName("welcome")[0].innerHTML = "<a href='./Main/index.html'><b>WVBGST OIOAIO RDAMTD DEREEO SOD...</b></a>"
 		}
 	}
 	for (let i = 0; i < previews.length; i++){
