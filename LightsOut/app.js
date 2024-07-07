@@ -38,7 +38,7 @@ function refresh(){
 	}
 	won = isWon;
 	if(won){
-		document.getElementById("titlecard").innerHTML = "<p><b>Untitled, 1982, Jean Michel Basquiat</b></p>
+		document.getElementById("titlecard").innerHTML = "<p><b>Untitled, 1982, Jean Michel Basquiat</b></p>";
 	}
 
 }
