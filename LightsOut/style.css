@@ -1,0 +1,33 @@
+body {
+	background-color:#e3e0c1;
+	text-align: center;
+}
+p, h1, h2, h3, h4, h5, h6, li  {
+	font-family: courier;
+	color: #768c7c;
+}
+a {
+	font-family: courier;
+	color: #6682ad;
+}
+ol, ul {
+	display: inline-block;
+	text-align: left;
+}
+
+#board{
+	margin: auto;
+	height: 800px;
+	width: 800px;
+	display: grid;
+	grid-template-columns: repeat(8, auto);
+	background-image: url("./images/untitled/Untitled.png");
+	background-color: #cccccc;
+}
+
+.cell{
+	height: 100px;
+	width: 100px;
+	background-color: black;
+	opacity: 0;
+}
