@@ -20,7 +20,6 @@ for (let i = 0; i < cells.length; i++){
 for (let i = 0; i < 100; i++){
 	play(Math.floor(Math.random()*dims*dims));
 }
-console.log(board);
 refresh();
 
 function refresh(){
