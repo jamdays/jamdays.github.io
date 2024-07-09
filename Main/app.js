@@ -44,7 +44,7 @@ function checkWord() {
 		elem.style.zIndex = -1;
 		elem.style.position = "absolute";
 		elem.style.left = Math.round(Math.random()*(screen_width-50) + 10) + "px";
-		elem.style.top = Math.round(Math.random()*60) + "px";
+		elem.style.top = Math.round(Math.random()*50) + "px";
 
 	}
 	document.querySelector("#wordGuess").value = "";
