@@ -37,11 +37,10 @@ function checkWord() {
 		document.querySelector("#" + userInput.toLowerCase()).style.visibility = "visible";
 	}
 	else if (isValid(userInput.toLowerCase()) && word_dict.has(userInput.toLowerCase())){
-		console.log(userInput);
 		let screen_width = window.innerWidth;
 		let elem = document.createElement("div");
 		document.body.appendChild(elem);
-		elem.textContent = userInput;
+		elem.innerHTML = `<p>${userInput}</p>`;
 		elem.style.zIndex = -1;
 		elem.style.position = "absolute";
 		elem.style.left = Math.round(Math.random()*(screen_width-50) + 10) + "px";

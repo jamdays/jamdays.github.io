@@ -14,6 +14,15 @@ ol, ul {
 	display: inline-block;
 	text-align: left;
 }
+input {
+	font-family: courier;
+	color: #768c7c;
+	background-color: #eedfbf;
+	border-color: #427e87;
+	border-width: 5px;
+
+	
+}
 .center {
 	margin: auto;
 	width: 50%;
