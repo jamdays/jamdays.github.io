@@ -46,8 +46,9 @@ for (let i = 0; i < notes.length; i++){
 		k++;
 	}
 	let rando = Math.random();
-	notes[i].style.top = Math.floor(Math.random()*300 + screen.height/4) + 'px';
-	notes[i].style.left = Math.floor(Math.random()*1000 + screen.width/2) - 500 + 'px';
+	console.log(screen.height);
+	notes[i].style.top = Math.floor(Math.random()*50 + screen.height/2) + 'px';
+	notes[i].style.left = Math.floor(Math.random()*50 + (screen.width/5)*(i+1))+ 'px';
 	notes[i].innerHTML = `<h3>${NOTES[prev_k + Math.floor(rando*(k-prev_k))][0]}</h3><b>${NOTES[prev_k + Math.floor(rando*(k-prev_k))][1]}</b>`;
 	notes[i].addEventListener("mousedown", function(){dragDrop(note);});
 	k++;
