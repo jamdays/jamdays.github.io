@@ -22,8 +22,10 @@ ol, ul {
 }
 
 .note {
-	font-size: 16px;
-        font-family: courier;
+	font-size: 15px;
+        font-family: 'Times New Roman';
+	font-weight: 20;
+	font-style: italic;
 	background-color: #ccca68;
         color: DimGray;
 	position: absolute;
@@ -32,4 +34,140 @@ ol, ul {
 	width: 260px;
 	height: 260px;
 }
+#imgholder{
+	height: 200px;
+	width: 200px;
+	background-color gray;
+	box-shadow: 5px 2px 2px black;
+}
 
+#whiteboard{
+	 
+	background-color: white;
+	margin: auto;
+	width: 1500px;
+	height: 800px;
+	border: solid;
+	border-width: 30px; 
+	border-color: #8c989c #575e61;
+}
+
+.whiteboardtext{
+	font-size: 20px;
+	color: black; 
+	font-family: helvetica;
+	font-variant-caps: all-small-caps;
+	font-style: italic;
+	font-weight: 900;
+
+}
+
+#altar{
+	z-index: 3;
+	margin: auto;
+	width: 1000px;
+	height: 100px;
+	background-color: darkred;
+	border-style: none none solid none;
+}
+#altarbase{
+	z-index: 1;
+	display: flex;
+	margin: auto;
+	width: 900px;
+	border-style: none solid none solid;
+	background-color: #ffffe0;
+	height: 300px;
+}
+
+#altarfoot{
+	display: flex;
+	margin: auto;
+	width: 950px;
+	background-color: #ffffe0;
+	border: solid;
+	border-width: 3px;
+	height: 25px;
+}
+.altar-pillar{
+	z-index: 2;
+	margin: auto; 
+	height: 300px;
+	width: 75px;
+	background-color: #fffff0;
+	border-style: none solid none solid;
+	border-width: 3px;
+}
+.altar-deco{
+	background-color: gold;
+	width: 350px;
+	height: 300px;
+	margin: 0px -75px;
+}
+
+.cd-border{
+	margin: auto;
+	margin-top: 50px;
+	opacity: 1;
+	border: solid;
+	border-radius: 200px;
+	border-width: 75px;
+	border-color: black;
+	height: 50px;
+	width: 50px;
+}
+.cd{
+	opacity: 1;
+	border: solid;
+	border-radius: 200px;
+	border-width: 71px;
+	border-color: #99e1e2 #b9e5ea #c5eaed #b3e5ea;
+	height: 54px;
+	width: 54px;
+	margin: -73px;
+}
+#altartop{
+	margin: auto;
+	margin-top: 100px;
+	display: flex;
+	width: 1000px; 
+}
+
+#cup{
+	margin: auto;
+	background-color: gold;
+	height: 150px;
+	width: 75px;
+	clip-path: polygon(0% 100%, 0% 95%, 43% 95%, 43% 33%, 10% 33%, 0% 0%, 100% 0%, 90% 33%, 57% 33%, 57% 95%, 100% 95%, 100% 100%)
+
+}
+#plate{
+	margin: auto;
+	margin-bottom: 0px;
+	background-color: gold;
+	width: 200px;
+	height: 20px;
+	clip-path: polygon(100% 0%, 90% 100%, 10% 100%, 0% 0%)
+}
+
+#cover{
+	margin: auto;
+	margin-bottom: 0px;
+	height: 10px;
+	width: 300px;
+	background-color: #573623;
+}
+
+#pages{
+	background-color: ivory;
+	height: 75px;
+	width: 276px;
+	margin: auto;
+	clip-path: path('M 0 30 Q 69 30 138 70 Q 205 30 276 30 L 276 75 L 0 75 z');
+
+}
+#book{
+	height: 85px;
+	margin: auto;
+	margin-bottom: 0px;
+}

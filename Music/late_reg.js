@@ -2,10 +2,10 @@ const NOTES = [
 ["Drive Slow", 
 "It's just something about it <br> I mean you just have to take life slow <br> Just know it's not important"],
 ["Heard Em Say", 
-"I mean this song isn't actually about hard work <br> It's about something else <br> I mean racism obviously <br> but I mean still something more than that <br> It's just that the chorus makes it sound like its about hard work"],
+"I mean this song isn't actually about hard work It's about something else I mean racism obviously but I mean still something more than that It's just that the chorus makes it sound like its about hard work"],
 ["Roses", 
 "We the roses. Idk if that's true for me. But it is a big contrast with the rest of the album. In some ways. A lot of the album is about leaving behind home and not in a sad way But this is about coming back to it but I guess just to say goodbye again"],
-["Gone", '"My dog worked at Taco Bell, hooked us up plural <br> Fired a week later the manager count the churros" Reminds me of the bowling alley I used to work at. So yeah, its basically me, except I wasnt fired and there were no churros, so it basically isnt me'],
+["Gone", '"My dog worked at Taco Bell, hooked us up plural Fired a week later the manager count the churros" <br> Reminds me of the bowling alley I used to work at. So yeah, its basically me, except I wasnt fired and there were no churros, so it basically isnt me'],
 ["Bring Me Down", "Classic Kanye Persecution Complex. I think it's like now that he says all that racist stuff you can easily hear it in his early music, I mean not against jewish people but just sort of people in general"],
 ["Crack Music", "Crack has never even remotely touched my life, well I mean except through tv and stuff. But I mean it is what the song is about, but it's also about how I blame white people for all my problems"],
 ["Late Registration", "This used to be my favorite album, for a long time too. It just reminded me of everything I didn't like in a way I liked and makes me feel like I'm in control or something deep like that"],
@@ -49,7 +49,7 @@ for (let i = 0; i < notes.length; i++){
 	console.log(screen.height);
 	notes[i].style.top = Math.floor(Math.random()*50 + screen.height/2) + 'px';
 	notes[i].style.left = Math.floor(Math.random()*50 + (screen.width/5)*(i+1))+ 'px';
-	notes[i].innerHTML = `<h3>${NOTES[prev_k + Math.floor(rando*(k-prev_k))][0]}</h3><b>${NOTES[prev_k + Math.floor(rando*(k-prev_k))][1]}</b>`;
+	notes[i].innerHTML = `<h3 class="whiteboardtext">${NOTES[prev_k + Math.floor(rando*(k-prev_k))][0]}</h3><b>${NOTES[prev_k + Math.floor(rando*(k-prev_k))][1]}</b>`;
 	notes[i].addEventListener("mousedown", function(){dragDrop(note);});
 	k++;
 }
