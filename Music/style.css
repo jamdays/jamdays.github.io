@@ -76,7 +76,7 @@ ol, ul {
 	margin: auto;
 	width: 900px;
 	border-style: none solid none solid;
-	background-color: #ffffe0;
+	background-color: /*#ffffe0*/ #797d79;
 	height: 300px;
 }
 
@@ -84,7 +84,7 @@ ol, ul {
 	display: flex;
 	margin: auto;
 	width: 950px;
-	background-color: #ffffe0;
+	background-color: /*#ffffe0*/#e6e7eb;
 	border: solid;
 	border-width: 3px;
 	height: 25px;
@@ -94,12 +94,12 @@ ol, ul {
 	margin: auto; 
 	height: 300px;
 	width: 75px;
-	background-color: #fffff0;
+	background-color: /*#fffff0*/#9da39e;
 	border-style: none solid none solid;
 	border-width: 3px;
 }
 .altar-deco{
-	background-color: gold;
+	background-color: #d2d3d7;
 	width: 350px;
 	height: 300px;
 	margin: 0px -75px;
@@ -135,16 +135,17 @@ ol, ul {
 
 #cup{
 	margin: auto;
-	background-color: gold;
+	background-color: #afb9c7;
 	height: 150px;
 	width: 75px;
+	margin-right: 180px;
 	clip-path: polygon(0% 100%, 0% 95%, 43% 95%, 43% 33%, 10% 33%, 0% 0%, 100% 0%, 90% 33%, 57% 33%, 57% 95%, 100% 95%, 100% 100%)
 
 }
 #plate{
 	margin: auto;
 	margin-bottom: 0px;
-	background-color: gold;
+	background-color: #afb9c7;
 	width: 200px;
 	height: 20px;
 	clip-path: polygon(100% 0%, 90% 100%, 10% 100%, 0% 0%)
@@ -155,7 +156,7 @@ ol, ul {
 	margin-bottom: 0px;
 	height: 10px;
 	width: 300px;
-	background-color: #573623;
+	background-color: #2b1d2e;
 }
 
 #pages{
@@ -168,6 +169,126 @@ ol, ul {
 }
 #book{
 	height: 85px;
+	width: 300px;
 	margin: auto;
 	margin-bottom: 0px;
+}
+#bookpopup{
+	margin: auto;
+	margin-top: 70px;
+	display: flex;
+	background-color: ivory;
+	width: 350px;
+	height: 280px;
+	border-style: none solid;
+	border-width: 10px;
+	border-color: #2b1d2e;
+	text-align: center;
+
+}
+.leftpage {
+	height: 280px;
+	width: 170px;
+	border-style: none solid none none;
+	border-color: #f5f5d7;
+	text-align: center;
+	font-family: sans-serif;
+	font-style: italic;
+	font-variant: small-caps;
+	color: black;
+	
+}
+.rightpage {
+	height: 280px;
+	width: 170px;
+	border-style: none none none solid;
+	border-color: #f5f5d7;
+	font-family: sans-serif;
+	font-variant: small-caps;
+	font-style: italic;
+	color: black;
+
+}
+.title {
+	font-family: sans-serif;
+	font-variant: all-small-caps;
+	color: black;
+	font-weight: 1000;
+
+}
+
+#cuppopup{
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #ee0002;
+	border: solid;
+	border-width: 10px;
+	border-color: #afb9c7;
+	border-radius: 100%;
+	margin: auto;
+	height: 190px;
+	width: 190px;
+	margin-top: 100px;
+
+}
+#platepopup{
+	background-color: #888f99;
+	border: solid;
+	border-width: 10px;
+	border-color: #afb9c7;
+	border-radius: 100%;
+	margin: auto;
+	height: 290px;
+	width: 290px;
+	margin-top: 50px;
+}
+.popup{
+	z-index: 6;
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	background-color: darkred;
+	border: solid;
+}
+.sm-cd-border{
+	opacity: 1;
+	border: solid;
+	border-radius: 200px;
+	border-width: 30px;
+	border-color: black;
+	height: 20px;
+	width: 20px;
+}
+.sm-cd{
+	opacity: 1;
+	border: solid;
+	border-radius: 200px;
+	border-width: 26px;
+	border-color: #99e1e2 #b9e5ea #c5eaed #b3e5ea;
+	height: 24px;
+	width: 24px;
+	margin: auto;
+	margin-top: -28px;
+	margin-left: -28px;
+}
+.letter{
+	font-family: sans-serif;
+	font-variant: all-small-caps;
+	color: #f9cf77;
+	font-weight: 1000;
+	font-size: 30px;
+	text-shadow: 2px 2px 2px 2px;
+	width: 17px;
+	height: 25px;
+
+}
+.x {
+	font-family: sans-serif;
+	color: black;
+	font-weight 1000; 
+	font-size: 40px;
+	width: 20px;
+	height: 20px;
+	margin-left: 360px;
+	
 }
