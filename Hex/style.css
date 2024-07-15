@@ -1,0 +1,46 @@
+body {
+	background-color:#e3e0c1;
+	text-align: center;
+}
+p, h1, h2, h3, h4, h5, h6, li  {
+	font-family: courier;
+	color: #768c7c;
+}
+a {
+	font-family: courier;
+	color: #6682ad;
+}
+ol, ul {
+	display: inline-block;
+	text-align: left;
+}
+
+.cell {
+	height: 44px;
+	width: 44px;
+	clip-path: polygon(50% 100%, 100% 75%, 100% 25%, 50% 0%, 0% 25%, 0% 75%);
+	margin-left: 3px;
+	margin-right: 3px;
+	background-color: #ffffdd;
+}
+.row {
+	height: 50px;
+	width: 550px;
+	display: flex;
+	margin-top: -2px;
+	margin-bottom: -2px;
+}
+
+#board {
+	margin: auto;
+	width: 800px;
+	height: 725px;
+}
+
+#wincard {
+	height: 100px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+
