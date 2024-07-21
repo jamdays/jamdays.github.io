@@ -6,6 +6,7 @@ let ufa = {121: -1, 122: -1};
 let ufb = {121: -1, 122: -1};
 let uf = [ufa, ufb]
 let played = [new Set(), new Set()];
+let won = false;
 for (let i = 0; i < 11; i++){
 	for (let j = 0; j < 11; j++){
 		if (j == 10){
@@ -18,7 +19,6 @@ for (let i = 0; i < 11; i++){
 		}
 		document.querySelector(`#row${i}`).innerHTML += `<div class="cell" id="${i*11 + j}"></div>`;
 		document.querySelector(`#row${i}`).style.marginLeft = `${i*25}px`;
-		document.querySelector(`#row${i}`).style.marginTop = "-10px";
 	}
 }
 
@@ -31,7 +31,7 @@ for (let i = 0; i < cells.length; i++){
 
 
 function playMove(k){
-	if (played[turn].has(k) || played[(turn + 1)%2].has(k)){
+	if (won || played[turn].has(k) || played[(turn + 1)%2].has(k)){
 		return;
 	}
 	played[turn].add(k);
@@ -55,7 +55,8 @@ function playMove(k){
 		union(k, k-1, turn);
 	}
 	if (find(121, 121, turn) == find(122, 122, turn)){
-		console.log("WON");
+		document.querySelector("#wincard").innerHTML = `<p>${turn == 1 ? "Blue": "Purple"} won</p>`
+		won = true;
 	}
 	turn = (turn + 1) % 2;
 	
@@ -80,7 +81,6 @@ function union(a, b, turn){
 
 function find(k, original, turn){
 	if (Object.hasOwn(uf[turn], k)){
-		console.log(k);
 		if(uf[turn][k] == -1){
 			if (k != original){
 				uf[turn][original] = k;
