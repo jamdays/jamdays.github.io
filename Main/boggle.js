@@ -29,9 +29,9 @@ const body = document.getElementsByTagName("body")[0];
 let dictionary = new Set(words);
 let used = new Set();
 let n = kStandardCubes.length;
-let commands = ["ls", "lsa", "ls -a", "cd", "cat"];
-let dirs = {"Documents":{}, "Games":{}, "Downloads":{}};
-let pwd = [];
+let hidden = ["lsa", "ls -a"];
+let dirs = {"~": {"Documents":{"School":{}, "Projects":{}, "Other":{}}, "Games":{}, "Downloads":{}}};
+let pwd = ["~"];
 var i, temp;
 while (n-1){
 	i = Math.floor(Math.random()*n);
@@ -56,13 +56,67 @@ for (let i = 0; i < cells.length; i++){
 let paper = document.getElementsByClassName("paper");
 let paper_count = 0;
 let input = document.getElementById("wordGuess");
+let space_used = 0;
+
+function ls(pwd, idx, dir) {
+	if (idx < pwd.length){
+		if(pwd[idx] in dir){
+			return ls(pwd, idx + 1, dir[pwd[idx]]);
+		}
+	}
+	let out = ""; 
+	for (let i = 0; i < Object.keys(dir).length; i++){
+		out += Object.keys(dir)[i] + " ";
+	}
+	return out;
+	
+}
+
+function cd(pwd, idx, dir, new_dir) {
+	if (new_dir == ".."){
+		if (pwd.length > 1){
+			pwd.pop()
+		}
+		return;
+	}
+	if (idx < pwd.length){
+		if(pwd[idx] in dir){
+			return cd(pwd, idx + 1, dir[pwd[idx]], new_dir);
+		}
+	}
+	if (!(new_dir in dir)){
+		throw ReferenceError;
+	}
+	pwd.push(new_dir)
+	return;
+	
+}
+
 function checkWord() {
 	let userInput = document.querySelector("#wordGuess").value;
+	if (userInput == "ls"){
+		space_used += 2;
+		paper[paper_count].innerHTML += userInput + "<br>" ;
+		paper[paper_count].innerHTML += ls(pwd, 0, dirs) + "<br>" ;
+		
+		
+	}
+	if (userInput.indexOf("cd ") == 0){
+		try {
+			cd(pwd, 0, dirs, userInput.substring(3));
+			space_used += 1;
+			paper[paper_count].innerHTML += userInput + "<br>" ;
+		}
+		catch (ReferenceError) { 
+		}
+		
+		
+	}
 	if (isValid(userInput) && dictionary.has(userInput.toLowerCase()) && !used.has(userInput.toLowerCase())){
 		paper[paper_count].innerHTML += userInput + "<br>" ;
 		used.add(userInput.toLowerCase());
 	}
-	if (used.size % 20 == 0 && used.size > paper_count*20){
+	if ((used.size + space_used) > (paper_count*20 + 20)){
 		let k = paper_count;
 		paper[k].style.position = "absolute";
 		paper[k].style.rotate = "0deg";

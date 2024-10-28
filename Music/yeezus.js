@@ -1,81 +1,74 @@
-let readings = {
-	0: [["TITLE"],
-		["quote"],
-		["COMMENTARY"],],
-	1: [[],
-		[],
-		[]], 
-	2: [[],
-		[],
-		[]],
-	3: [[],
-		[],
-		[]],
-	4: [[],
-		[],
-		[]], 
-	5: [[],
-		[],
-		[]], 
-	6: [[],
-		[],
-		[]]
-};
-document.querySelector("#cup").addEventListener("click", function(){popup("cup");});
-document.querySelector("#book").addEventListener("click", function(){popup("book")});
-document.querySelector("#plate").addEventListener("click", function(){popup("plate")});
-let inner = {"cup": "", "book": "", "plate": ''};
-for (let i = 0; i < 10; i++){
-	let left = Math.floor(Math.random()*200);
-	let tp = Math.floor(Math.random()*200) - 78*i;
-	let pos = `position: relative; left:${left}px; top:${tp}px;`
-	let rotate = Math.floor(Math.random()*360);
-	inner["plate"] += `<div class="sm-cd-border" style="${pos} rotate:${rotate}deg"><div class="sm-cd"></div></div>`;
+const NOTES = [
+["On sight", 
+"First time I listened to the album I didn't like it, but it just gets better every time <br> (related to the message of this song btw)"],
+["Bound 2", 
+"Yeah Bound 2 falling in love, I mean true, but that's definitely not what this song is about"],
+["I am a God", 
+'"Would it be better if I had a song that said I am a nigga?" I mean thats what kanye says about the song but it also seems like anti capitalism'],
+["Im In It", 'Since I dont wanna comment on'],
+["Bring Me Down", "Classic Kanye Persecution Complex. I think it's like now that he says all that racist stuff you can easily hear it in his early music, I mean not against jewish people but just sort of people in general"],
+["Crack Music", "Crack has never even remotely touched my life, well I mean except through tv and stuff. But I mean it is what the song is about, but it's also about how I blame white people for all my problems"],
+["Late Registration", "This used to be my favorite album, for a long time too. It just reminded me of everything I didn't like in a way I liked and makes me feel like I'm in control or something deep like that"],
+["Gold Digger", `"And when you get on, he'll leave yo' ass for a white girl". I mean true. The symbol of white women I guess I saw too many movies when I was little especially racist ones I guess`],
+["My Way Home", "Sometimes this is just like how you feel, like you gotta leave shit behind but more than that too like you don't wanna go back idk I mean it's just frustrating cause you owe them so much but I mean also you always wanna leave and not come back"],
+["Skit No.4", "Yes. Kanye predicted among us. But really it just applies to what I learned from growing up in a nice white school with nice white people, I thought I was white but I guess nice white people have something to say about that. I mean the skit is just true fr"],
+]
+
+const QUOTES = [
+"Memories don't live like people do <br> they always rmember you",
+"I keep it 300, like the Romans <br> 300 bitches where the Trojans?",
+"Uh, they be ballin in the D League <br> Uh, I be speaking swaghili",
+"They prolly all in the Hamptons <br> Braggin' bout what they made <br> Fuck you and your hampton house <br> I'll fuck your hampton spouse",
+"I know that we the new slaves <br> y'all niggas can't fuck with me"
+]
+
+let k = Math.random()
+let quote_probs = [.99, .97, .87, .4, 0];
+for (let i = 0; i < quote_probs.length; i++){
+	if (k > quote_probs[i]){
+		k = (quote_probs.length -1 - i);
+		break;
+	}
 }
-let text = "            YEEZUS by  Kanye West       "
-for (let i = 0; i < text.length; i++){
-	let rotate = Math.floor(Math.random()*90) - 45;
-	inner["cup"] += `<div class="letter" style="rotate:${rotate}deg">${text[i]}</div>`;
+
+document.querySelector("#quote").innerHTML = `"${QUOTES[k]}"`;
+const notes = document.getElementsByClassName("note");
+
+const body = document.getElementsByTagName("body")[0];
+k = 0;
+for (let i = 0; i < notes.length; i++){
+	let prev_k = k;
+	let note = notes[i];
+	if (Math.random() > .8){
+		if (Math.random() > .5){
+			k++;
+		}
+		k++;
+	}
+	let rando = Math.random();
+	console.log(screen.height);
+	notes[i].style.top = Math.floor(Math.random()*50 + screen.height/2) + 'px';
+	notes[i].style.left = Math.floor(Math.random()*50 + (screen.width/5)*(i+1))+ 'px';
+	notes[i].innerHTML = `<h3 class="whiteboardtext">${NOTES[prev_k + Math.floor(rando*(k-prev_k))][0]}</h3><b>${NOTES[prev_k + Math.floor(rando*(k-prev_k))][1]}</b>`;
+	notes[i].addEventListener("mousedown", function(){dragDrop(note);});
+	k++;
 }
-let day = 0;
-let reading = readings[day];
-inner["book"] += `<div class="leftpage"><div class="title">${reading[0]}</div><hr>${reading[1]}</div><div class="rightpage">${reading[2]}</div>`
 
 
-let body = document.querySelector("body");
-function popup(type){
-	console.log("HELLO");
-	if (!document.querySelector(`#${type}popup`)){
-		body.innerHTML += `<div id="${type}up"class="popup" style="top:${screen.height/2 + Math.random()*50 -225}px; left:${screen.width/2 + Math.random()*50 -225}px;"><div id="${type}x"class="x">X</div><div id="${type}popup">${inner[type]}</div></div>`;
-		document.querySelector(`#${type}x`).addEventListener("click", function(){document.querySelector(`#${type}up`).remove();});
-	}
-	if (!document.querySelector('#cuppopup')){
-		document.querySelector("#cup").addEventListener("click", function(){popup("cup");});
-	}
-	else {
-		document.querySelector(`#cupx`).addEventListener("click", function(){
-			document.querySelector(`#cupup`);
-			document.querySelector("#cup").addEventListener("click", function(){popup("cup");});
-		});
-	}
-	if (!document.querySelector('#bookpopup')){
-		document.querySelector("#book").addEventListener("click", function(){popup("book")});
-	}
-	else {
-		document.querySelector(`#bookx`).addEventListener("click", function(){
-			document.querySelector(`#bookup`);
-			document.querySelector("#book").addEventListener("click", function(){popup("book")});
-		});
-	}
-	if (!document.querySelector('#platepopup')){
-		document.querySelector("#plate").addEventListener("click", function(){popup("plate")});
-	}
-	else {
-		document.querySelector(`#platex`).addEventListener("click", function(){
-			document.querySelector(`#plateup`);
-			document.querySelector("#plate").addEventListener("click", function(){popup("plate")});
-		});
-	}
+function dragDrop(el){
+	let rect = el.getBoundingClientRect();
+	offset = [rect.left - event.clientX, rect.top - event.clientY];
+	body.onmouseup = function(){drop(el)};
+	body.onmousemove = function(){drag(el, offset)};
+}
 
+function drag(el, offset){
+	el.style.left = (event.clientX + window.scrollX + offset[0]) + "px";
+	el.style.top = (event.clientY + window.scrollY + offset[1]) +"px";
+}
 
+function drop(el){
+	let rect = el.getBoundingClientRect();
+	body.onmouseup = null;
+	body.onmousemove = null;
 }

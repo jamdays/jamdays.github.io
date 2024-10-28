@@ -11,7 +11,7 @@ const NOTES = [
 ["Late Registration", "This used to be my favorite album, for a long time too. It just reminded me of everything I didn't like in a way I liked and makes me feel like I'm in control or something deep like that"],
 ["Gold Digger", `"And when you get on, he'll leave yo' ass for a white girl". I mean true. The symbol of white women I guess I saw too many movies when I was little especially racist ones I guess`],
 ["My Way Home", "Sometimes this is just like how you feel, like you gotta leave shit behind but more than that too like you don't wanna go back idk I mean it's just frustrating cause you owe them so much but I mean also you always wanna leave and not come back"],
-["Skit No.4", "Yes. Kanye predicted among us. But really it just applies to what I learned from growing up in a nice white school with nice white people, I thought I was white but I guess nice white people have something to say about that. I mean the skit is just true fr"],
+["Skit No.4", "Yes. Kanye predicted among us. But really it just is what I learned from growing up in a nice white school with nice white people, I thought I was white but I guess nice white people have something to say about that. I mean the skit is just true fr"],
 ]
 
 const QUOTES = [
