@@ -29,8 +29,18 @@ const body = document.getElementsByTagName("body")[0];
 let dictionary = new Set(words);
 let used = new Set();
 let n = kStandardCubes.length;
-let hidden = ["lsa", "ls -a"];
-let dirs = {"~": {"Documents":{"School":{}, "Projects":{}, "Other":{}}, "Games":{}, "Downloads":{}}};
+let albums2024 = [6, "<br>Best Albums of 2024 <br> 1. BLUE LIPS <br> 2. I LAY DOWN MY LIFE FOR YOU <br> 3. #RICHAXXHATIAN or KOTMS V 2 idk"]
+let albums2016 = [7, "<br>Best Albums of 2016 <br> 1. TLOP <br> 2. Blank Face <br> 3. Still Brazy <br> Honorable Mentions: FLYGOD and Atrocity Exhibition"]
+let hiddenfile = [1, "<br>Sweet Robbery, On That Time, She Wish She Was"]
+let albums_sixteen = {"The Life of Pablo":{}, "untitled unmastered":{}, "Blank Face LP":{}, "Atrocity Exhibition":{}, "FLYGOD":{}, "Still Brazy":{}};
+let other = {"4:44":{}, "DAMN.":{}, "Die Lit":{}, "TA13OO":{}, "DAYTONA":{}, "KIDS SEE GHOSTS": {}, "ye":{}, "All My Heros Are Cornballs":{}, "Whole Lotta Red":{}};
+let downloads = {"Southernplayalisticcadillacmuzik": {}, "Illmatic": {}, "Mystic Stylez":{}, "Me Against The World":{}, "The Don Killuminati":{}, "All Eyez On Me":{}, "ATLiens":{}, "The Score":{}, "It's Dark and Hell is Hot":{}, 
+"Aquemini":{}, "The Miseducation of Lauryn Hill":{}, "Things Fall Apart":{}};
+let dirs = {"~": {"Documents":{"School":{}, "Projects":{}, "Other":{}}, 
+		"Games":{}, 
+		"Downloads":{}, 
+		"Music":{"albums2024.txt":albums2024, "albums2016.txt": albums2016, "Albums2016": albums_sixteen}, 
+		".Hidden":{"hiddenfile.txt": hiddenfile}}};
 let pwd = ["~"];
 var i, temp;
 while (n-1){
@@ -58,10 +68,10 @@ let paper_count = 0;
 let input = document.getElementById("wordGuess");
 let space_used = 0;
 
-function ls(pwd, idx, dir) {
+function lsa(pwd, idx, dir) {
 	if (idx < pwd.length){
 		if(pwd[idx] in dir){
-			return ls(pwd, idx + 1, dir[pwd[idx]]);
+			return lsa(pwd, idx + 1, dir[pwd[idx]]);
 		}
 	}
 	let out = ""; 
@@ -72,28 +82,77 @@ function ls(pwd, idx, dir) {
 	
 }
 
+function ls(pwd, idx, dir) {
+	if (idx < pwd.length){
+		if(pwd[idx] in dir){
+			return ls(pwd, idx + 1, dir[pwd[idx]]);
+		}
+	}
+	let out = ""; 
+	for (let i = 0; i < Object.keys(dir).length; i++){
+		if (Object.keys(dir)[i][0] != "."){
+			out += Object.keys(dir)[i] + " ";
+		}
+	}
+	return out;
+	
+}
+function cat(pwd, idx, dir, file){
+	if (idx < pwd.length){
+		if(pwd[idx] in dir){
+			return cat(pwd, idx + 1, dir[pwd[idx]], file);
+		}
+	}
+	if (file in dir && file.includes(".txt")){
+		return dir[file];
+	}
+	else {
+		throw ReferenceError;
+	}
+}
 function cd(pwd, idx, dir, new_dir) {
-	if (new_dir == ".."){
+	if (new_dir[0] == ".."){
 		if (pwd.length > 1){
 			pwd.pop()
 		}
-		return;
+		new_dir.shift();
+		return cd(pwd, idx, dir, new_dir);
 	}
 	if (idx < pwd.length){
 		if(pwd[idx] in dir){
 			return cd(pwd, idx + 1, dir[pwd[idx]], new_dir);
 		}
 	}
-	if (!(new_dir in dir)){
-		throw ReferenceError;
+	let dirdir = dir;
+	for (let i = 0; i < new_dir.length; i++){
+		if (!(new_dir[i] in dirdir) || new_dir[i].includes(".txt")){
+			throw ReferenceError;
+		}
+		dirdir = dirdir[new_dir[i]];
 	}
-	pwd.push(new_dir)
+	for (let i = 0; i < new_dir.length; i++){
+		pwd.push(new_dir[i]);
+	}
 	return;
 	
+}
+function printwd(arr){
+	let out = "";
+	for (let i = 0; i < arr.length; i++){
+		out += "/" + arr[i];
+	}
+	return out;
 }
 
 function checkWord() {
 	let userInput = document.querySelector("#wordGuess").value;
+	if (userInput == "ls -a"){
+		space_used += 3;
+		paper[paper_count].innerHTML += userInput + "<br>" ;
+		paper[paper_count].innerHTML += lsa(pwd, 0, dirs) + "<br>" ;
+		
+		
+	}
 	if (userInput == "ls"){
 		space_used += 2;
 		paper[paper_count].innerHTML += userInput + "<br>" ;
@@ -103,14 +162,29 @@ function checkWord() {
 	}
 	if (userInput.indexOf("cd ") == 0){
 		try {
-			cd(pwd, 0, dirs, userInput.substring(3));
+			cd(pwd, 0, dirs, userInput.substring(3).split("/"));
 			space_used += 1;
 			paper[paper_count].innerHTML += userInput + "<br>" ;
 		}
 		catch (ReferenceError) { 
 		}
 		
+	}
+	if (userInput.indexOf("cat ") == 0){
+		try {
+			let out = cat(pwd, 0, dirs, userInput.substring(4));
+			space_used += out[0] + 1;
+			paper[paper_count].innerHTML += userInput + "<br>" ;
+			paper[paper_count].innerHTML += out[1] + "<br>";
+		}
+		catch (ReferenceError) { 
+		}
 		
+	}
+	if (userInput == "pwd"){
+		space_used += 2;
+		paper[paper_count].innerHTML += "pwd" + "<br>" ;
+		paper[paper_count].innerHTML += printwd(pwd) + "<br>";
 	}
 	if (isValid(userInput) && dictionary.has(userInput.toLowerCase()) && !used.has(userInput.toLowerCase())){
 		paper[paper_count].innerHTML += userInput + "<br>" ;
