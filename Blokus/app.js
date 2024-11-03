@@ -269,6 +269,7 @@ function rotate(el){
 	let idx = parseInt(el.id.slice(2));
 	let pid = parseInt(el.id[1]);
 	let out = "";
+	let a = "";
 	if (event.button == 0 && !event.shiftKey){
 		PIECES[pid][idx] = rotator(PIECES[pid][idx]);
 		let rep = PIECES[pid][idx][0].length.toString();
@@ -280,10 +281,15 @@ function rotate(el){
 	}
 	else if (event.button == 0){
 		PIECES[pid][idx] = mirror(PIECES[pid][idx]);
+		if (pid == 4  && idx == 0){
+			if(sessionStorage.getItem("albums") != "true" && sessionStorage.getItem("boardgames") == "true"){
+				a = `<a href='./eightpuzzle.html' style="position:absolute; margin-right:120px">A</a>`;
+			}
+		}
 	}
 	for (let i = 0; i < PIECES[pid][idx].length; i++){
 		for (let j = 0; j < PIECES[pid][idx][i].length; j++){
-			out += PIECES[pid][idx][i][j] == 0 ? '<div class="tile" style="opacity:0; border-style:none;"></div>' : '<div class="tile" style="background-color:' + colors[pid] +';"></div>';
+			out += PIECES[pid][idx][i][j] == 0 ? '<div class="tile" style="opacity:0; border-style:none;"></div>' : '<div class="tile" style="background-color:' + colors[pid] +';">' + a + '</div>';
 		}
 	}
 	el.innerHTML = out;
@@ -435,9 +441,6 @@ function place(id, r, c){
 document.getElementsByClassName("piece_holder_b")[0].innerHTML = toPieces(2);
 document.getElementsByClassName("piece_holder_y")[0].innerHTML = toPieces(3);
 document.getElementsByClassName("piece_holder_r")[0].innerHTML = toPieces(1);
-if(sessionStorage.getItem("albums") != "true" && sessionStorage.getItem("boardgames") == "true"){
-	document.getElementsByClassName("piece_holder_g")[0].innerHTML = `<a href='./eightpuzzle.html' style="position:absolute; margin-right:120px">A</a>`;
-}
 document.getElementsByClassName("piece_holder_g")[0].innerHTML += toPieces(4);
 blocks = document.getElementsByClassName("block");
 for (let i = 0; i < blocks.length; i++){
