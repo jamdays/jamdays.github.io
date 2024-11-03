@@ -45,18 +45,25 @@ let csc258 = [1, "Fun"];
 let mat157 = [1, "Fun"];
 let goodish = [1, "MAT224, CSC207, MAT344"];
 let lightsout = [1, '<a href="../LightsOut/index.html">Lights Out</a>'];
-let cattrap = [1, '<a href="../CatTrap/index.html">Cat Trap Game</a>']
-let albums_sixteen = {"The Life of Pablo":{}, "untitled unmastered":{}, "Blank Face LP":{}, "Atrocity Exhibition":{}, "FLYGOD":{}, "Still Brazy":{}};
-let other = {"4:44":{}, "DAMN.":{}, "Die Lit":{}, "TA13OO":{}, "DAYTONA":{}, "KIDS SEE GHOSTS": {}, "ye":{}, "All My Heros Are Cornballs":{}, "Whole Lotta Red":{}};
-let downloads = {"Southernplayalisticcadillacmuzik": {}, "Illmatic": {}, "Mystic Stylez":{}, "Me Against The World":{}, "The Don Killuminati":{}, "All Eyez On Me":{}, "ATLiens":{}, "The Score":{}, "It's Dark and Hell is Hot":{}, 
+let cattrap = [1, '<a href="../CatTrap/index.html">Cat Trap Game</a>'];
+let recommended = [2, "Coup, Resistance, <br> Extreme Tux Racer"];
+let green = [1, "Green"]
+let flip = [1, "Flip"]
+let single = [1, "Single"]
+let use = [1, "list files - all at"]
+let where = [1, "home"]
+let lyrics = [5, "They don't wanna see the wanted man, <br> coming through with the gun in hand <br> <br> Rap been so good to me <br> I hope it gets me cancelled"]
+let albums_sixteen = {"The Life of Pablo":{}, "untitled unmastered":{}, "Blank Face LP":{"words.txt": use}, "Atrocity Exhibition":{}, "FLYGOD":{}, "Still Brazy":{"word.txt": single}};
+let other = {"4:44":{}, "DAMN.":{}, "Die Lit":{}, "TA13OO":{}, "DAYTONA":{}, "KIDS SEE GHOSTS": {}, "ye":{}, "All My Heros Are Cornballs":{"word.txt": where}, "Whole Lotta Red":{"word.txt": flip}};
+let downloads = {"Southernplayalisticcadillacmuzik": {}, "Illmatic": {}, "Mystic Stylez":{"word.txt": flip}, "Me Against The World":{}, "The Don Killuminati":{}, "All Eyez On Me":{}, "ATLiens":{}, "The Score":{}, "It's Dark and Hell is Hot":{}, 
 "Aquemini":{}, "The Miseducation of Lauryn Hill":{}, "Things Fall Apart":{}};
 let school = {"UofT": {"Trash Classes": {"MAT244.txt": mat244, "CSC240.txt": csc240} , "Good Classes": {"mat157.txt": mat157 , "csc258.txt": csc258}, "goodish.txt": goodish}, 
 "Gorman": {"Poems": {"TygerTyger.txt": tygertyger, "EuclidAlone.txt": euclid , "Jabberwocky.txt": jabberwocky}, "LinearAlgebra.txt": linearAlgebra, "Multi.txt": multivariable}}; 
 let projects = {"FarmsBurner.txt" : farmsBurner, "Website.txt": website};
 let dirs = {"~": {"Documents":{"School":{school}, "Projects":{projects}, "Other":{other}}, 
-		"Games":{"Fun Games": {"cattrap.txt": cattrap}, ".badgames":{"lightsout.txt": lightsout}}, 
+		"Games":{"Fun Games": {"recommended.txt": recommended, ".trash": {"cattrap.txt": cattrap}}, ".badgames":{"lightsout.txt": lightsout}}, 
 		"Downloads":{downloads}, 
-		"Music":{"albums2024.txt":albums2024, "albums2016.txt": albums2016, "Albums2016": albums_sixteen}, 
+		"Music":{"albums2024.txt":albums2024, "albums2016.txt": albums2016, "lyrics.txt": lyrics, "Albums2016": albums_sixteen}, 
 		".Hidden":{"hiddenfile.txt": hiddenfile}}};
 let pwd = ["~"];
 var i, temp;
