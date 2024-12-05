@@ -53,17 +53,17 @@ let single = [1, "Single"]
 let use = [1, "list files - all at"]
 let where = [1, "home"]
 let lyrics = [5, "They don't wanna see the wanted man, <br> coming through with the gun in hand <br> <br> Rap been so good to me <br> I hope it gets me cancelled"]
-let albums_sixteen = {"The Life of Pablo":{}, "untitled unmastered":{}, "Blank Face LP":{"words.txt": use}, "Atrocity Exhibition":{}, "FLYGOD":{}, "Still Brazy":{"word.txt": single}};
-let other = {"4:44":{}, "DAMN.":{}, "Die Lit":{}, "TA13OO":{}, "DAYTONA":{}, "KIDS SEE GHOSTS": {}, "ye":{}, "All My Heros Are Cornballs":{"word.txt": where}, "Whole Lotta Red":{"word.txt": flip}};
-let downloads = {"Southernplayalisticcadillacmuzik": {}, "Illmatic": {}, "Mystic Stylez":{"word.txt": flip}, "Me Against The World":{}, "The Don Killuminati":{}, "All Eyez On Me":{}, "ATLiens":{}, "The Score":{}, "It's Dark and Hell is Hot":{}, 
-"Aquemini":{}, "The Miseducation of Lauryn Hill":{}, "Things Fall Apart":{}};
-let school = {"UofT": {"Trash Classes": {"MAT244.txt": mat244, "CSC240.txt": csc240} , "Good Classes": {"mat157.txt": mat157 , "csc258.txt": csc258}, "goodish.txt": goodish}, 
+let Albums2016 = {'"The Life of Pablo"':{}, '"untitled unmastered"':{}, '"Blank Face LP"':{"words.txt": use}, '"Atrocity Exhibition"':{}, "FLYGOD":{}, '"Still Brazy"':{"word.txt": single}};
+let Other = {"4:44":{}, "DAMN.":{}, "Die Lit":{}, "TA13OO":{}, "DAYTONA":{}, '"KIDS SEE GHOSTS"': {}, "ye":{}, '"All My Heros Are Cornballs"':{"word.txt": where}, '"Whole Lotta Red"':{"word.txt": flip}};
+let Downloads = {"Southernplayalisticcadillacmuzik": {}, "Illmatic": {}, '"Mystic Stylez"':{"word.txt": flip}, '"Me Against The World"':{}, '"The Don Killuminati"':{}, '"All Eyez On Me"':{}, '"ATLiens"':{}, '"The Score"':{}, 
+'"Its Dark and Hell is Hot"':{}, "Aquemini":{}, '"The Miseducation of Lauryn Hill"':{}, '"Things Fall Apart"':{}};
+let School = {"UofT": {'"Trash Classes"': {"MAT244.txt": mat244, "CSC240.txt": csc240} , '"Good Classes"': {"mat157.txt": mat157 , "csc258.txt": csc258}, "goodish.txt": goodish}, 
 "Gorman": {"Poems": {"TygerTyger.txt": tygertyger, "EuclidAlone.txt": euclid , "Jabberwocky.txt": jabberwocky}, "LinearAlgebra.txt": linearAlgebra, "Multi.txt": multivariable}}; 
-let projects = {"FarmsBurner.txt" : farmsBurner, "Website.txt": website};
-let dirs = {"~": {"Documents":{"School":{school}, "Projects":{projects}, "Other":{other}}, 
-		"Games":{"Fun Games": {"recommended.txt": recommended, ".trash": {"cattrap.txt": cattrap}}, ".badgames":{"lightsout.txt": lightsout}}, 
-		"Downloads":{downloads}, 
-		"Music":{"albums2024.txt":albums2024, "albums2016.txt": albums2016, "lyrics.txt": lyrics, "Albums2016": albums_sixteen}, 
+let Projects = {"FarmsBurner.txt" : farmsBurner, "Website.txt": website};
+let dirs = {"~": {"Documents":{School, Projects, Other}, 
+		"Games":{'"Fun Games"': {"recommended.txt": recommended, ".trash": {"cattrap.txt": cattrap}}, ".badgames":{"lightsout.txt": lightsout}}, 
+		Downloads, 
+		"Music":{"albums2024.txt":albums2024, "albums2016.txt": albums2016, "lyrics.txt": lyrics, Albums2016}, 
 		".Hidden":{"hiddenfile.txt": hiddenfile}}};
 let pwd = ["~"];
 var i, temp;
@@ -102,6 +102,8 @@ function lsa(pwd, idx, dir) {
 	for (let i = 0; i < Object.keys(dir).length; i++){
 		out += Object.keys(dir)[i] + " ";
 	}
+	space_used += Math.ceil(out.length / 32)
+	console.log(space_used)
 	return out;
 	
 }
@@ -118,6 +120,7 @@ function ls(pwd, idx, dir) {
 			out += Object.keys(dir)[i] + " ";
 		}
 	}
+	space_used += Math.ceil(out.length / 32)
 	return out;
 	
 }
@@ -171,14 +174,14 @@ function printwd(arr){
 function checkWord() {
 	let userInput = document.querySelector("#wordGuess").value;
 	if (userInput == "ls -a"){
-		space_used += 3;
+		space_used += 1;
 		paper[paper_count].innerHTML += userInput + "<br>" ;
 		paper[paper_count].innerHTML += lsa(pwd, 0, dirs) + "<br>" ;
 		
 		
 	}
 	if (userInput == "ls"){
-		space_used += 2;
+		space_used += 1;
 		paper[paper_count].innerHTML += userInput + "<br>" ;
 		paper[paper_count].innerHTML += ls(pwd, 0, dirs) + "<br>" ;
 		
