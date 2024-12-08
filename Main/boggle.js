@@ -54,7 +54,7 @@ let use = [1, "list files - all at"]
 let where = [1, "home"]
 let lyrics = [5, "They don't wanna see the wanted man, <br> coming through with the gun in hand <br> <br> Rap been so good to me <br> I hope it gets me cancelled"]
 let Albums2016 = {'"The Life of Pablo"':{}, '"untitled unmastered"':{}, '"Blank Face LP"':{"words.txt": use}, '"Atrocity Exhibition"':{}, "FLYGOD":{}, '"Still Brazy"':{"word.txt": single}};
-let Other = {"4:44":{}, "DAMN.":{}, "Die Lit":{}, "TA13OO":{}, "DAYTONA":{}, '"KIDS SEE GHOSTS"': {}, "ye":{}, '"Victory Lap"':{}, "Redemption":{}, '"Hiding Places"':{} '"All My Heros Are Cornballs"':{"word.txt": where}, '"Whole Lotta Red"':{"word.txt": flip}};
+let Other = {"4:44":{}, "DAMN.":{}, "Die Lit":{}, "TA13OO":{}, "DAYTONA":{}, '"KIDS SEE GHOSTS"': {}, "ye":{}, '"Victory Lap"':{}, "Redemption":{}, '"Hiding Places"':{}, '"All My Heros Are Cornballs"':{"word.txt": where}, '"Whole Lotta Red"':{"word.txt": flip}};
 let Downloads = {"Southernplayalisticcadillacmuzik": {}, "Illmatic": {}, '"Mystic Stylez"':{"word.txt": flip}, '"Me Against The World"':{}, '"The Don Killuminati"':{}, '"All Eyez On Me"':{}, '"ATLiens"':{}, '"The Score"':{}, 
 '"Its Dark and Hell is Hot"':{}, "Aquemini":{}, '"The Miseducation of Lauryn Hill"':{}, '"Things Fall Apart"':{}};
 let School = {"UofT": {'"Trash Classes"': {"MAT244.txt": mat244, "CSC240.txt": csc240} , '"Good Classes"': {"mat157.txt": mat157 , "csc258.txt": csc258}, "goodish.txt": goodish}, 

@@ -31,7 +31,7 @@ for (let i = 0; i < 10; i++){
 	let tp = Math.floor(Math.random()*200) - 78*i;
 	let pos = `position: relative; left:${left}px; top:${tp}px;`
 	let rotate = Math.floor(Math.random()*360);
-	inner["plate"] += `<div class="sm-cd-border" style="${pos} rotate:${rotate}deg"><div class="sm-cd"></div></div>`;
+	inner["plate"] += `<div id="scb${i}" class="sm-cd-border" style="${pos} rotate:${rotate}deg"><div id="sc${i}" class="sm-cd"></div></div>`;
 }
 let text = "            YEEZUS by  Kanye West       "
 for (let i = 0; i < text.length; i++){
@@ -53,6 +53,12 @@ function popup(type){
 	if (!document.querySelector(`#${type}popup`)){
 		body.innerHTML += `<div id="${type}up"class="popup" style="top:${screen.height/2 + Math.random()*50 -225}px; left:${screen.width/2 + Math.random()*50 -225}px;"><div id="${type}x"class="x">X</div><div id="${type}popup">${inner[type]}</div></div>`;
 		document.querySelector(`#${type}x`).addEventListener("click", function(){document.querySelector(`#${type}up`).remove();});
+		if (type == "plate"){
+
+			for (let i = 0; i < 10; i++){
+				document.querySelector(`#sc${i}`).addEventListener("click", function(){document.querySelector(`#scb${i}`).style.visibility= "hidden"; sessionStorage.setItem("hasCD", true); }); 
+			}
+	}
 	}
 	document.querySelector("#cup").addEventListener("click", function(){popup("cup");});
 	document.querySelector("#book").addEventListener("click", function(){popup("book")});
