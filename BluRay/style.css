@@ -1,0 +1,79 @@
+body {
+	background-color:#e3e0c1;
+	text-align: center;
+}
+p, h1, h2, h3, h4, h5, h6, li  {
+	font-family: courier;
+	color: #768c7c;
+}
+a {
+	font-family: courier;
+	color: #6682ad;
+}
+ol, ul {
+	display: inline-block;
+	text-align: left;
+}
+.tv {
+	margin:auto;
+	margin-top: 200px;
+	padding-top: 5px;
+	width: 600px;
+	height: 400px;
+	background-color: #333343;
+}
+.tvinside {
+	margin:auto;
+	width: 590px;
+	height: 390px;
+	background-color: #000000;
+}
+.cdplayer {
+	margin: auto;
+	margin-top: auto;
+	margin-bottom: 0px;
+	width: 150px;
+	height: 20px;
+	background-color: #dddddd;
+	padding-top: 20px;
+
+}
+.cdslot {
+	margin: auto;
+	width: 100px;
+	height: 5px;
+	background-color: #000000;
+
+}
+.tvstand {
+	margin: auto;
+	background-color: #000000;
+	width: 700px;
+	height: 350px;
+	display: grid;
+	padding-left: 20px;
+	padding-top: 20px;
+	grid-template-columns: repeat(4, auto);
+}
+.tvstandhole {
+	width: 150px;
+	height: 150px;
+	background-color:#d2d0b0;
+	display: flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	
+}
+.tvbasket {
+	width: 150px;
+	height: 150px;
+	background-color: #a37c49;
+}
+.tvbaskethandle {
+	margin: auto;
+	margin-top: 10px;
+	width: 50px;
+	height: 15px;
+	background-color: #5f3805;
+}
