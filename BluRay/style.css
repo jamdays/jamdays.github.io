@@ -77,3 +77,52 @@ ol, ul {
 	height: 15px;
 	background-color: #5f3805;
 }
+.remote {
+	margin: auto;
+	margin-bottom: 0px;
+	height: 15px;
+	width: 100px;
+	background-color: #000000;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 80%, 0% 100%);
+}
+.popup{
+	z-index: 6;
+	position: absolute;
+	height: 250px;
+	width: 250px;
+	background-color: #815a27;
+	border: solid;
+	border-width: 15px;
+	border-color: #a37c49;
+}
+.x {
+	font-family: sans-serif;
+	color: black;
+	font-weight 1000; 
+	font-size: 40px;
+	width: 20px;
+	height: 20px;
+	margin-left: 220px;
+	
+}
+#remoteup {
+	z-index: 6;
+	position: absolute;
+	height: 100px;
+	width: 40px;
+	background-color: #000000;
+	border: solid;
+	border-color: #ffffff;
+	color: #ffffff;
+}
+
+#remotex {
+	font-family: sans-serif;
+	color: white;
+	font-weight 1000; 
+	font-size: 20px;
+	width: 20px;
+	height: 20px;
+	margin-left: 0px;
+}
+
