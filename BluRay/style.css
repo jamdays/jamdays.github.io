@@ -125,4 +125,35 @@ ol, ul {
 	height: 20px;
 	margin-left: 0px;
 }
+.sm-cd-border{
+	margin: auto;
+	opacity: 1;
+	border: solid;
+	border-radius: 300px;
+	border-width: 40px;
+	border-color: black;
+	height: 25px;
+	width: 25px;
+}
+.sm-cd{
+	opacity: 1;
+	border: solid;
+	border-radius: 300px;
+	border-width: 36px;
+	border-color: #99e1e2 #b9e5ea #c5eaed #b3e5ea;
+	height: 29px;
+	width: 29px;
+	margin: auto;
+	margin-top: -38px;
+	margin-left: -38px;
+}
+.paper {
+	font-family: courier;
+	color: #768c7c;
+	rotate: -15deg; 
+	background-color: #f2eecb;
+	width: 150px;
+	margin: auto;
+	height: 200px;
+}
 

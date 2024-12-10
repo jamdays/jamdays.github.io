@@ -52,7 +52,10 @@ function popup(type){
 	}
 	if (!document.querySelector(`#${type}popup`)){
 		body.innerHTML += `<div id="${type}up"class="popup" style="top:${screen.height/2 + Math.random()*50 -225}px; left:${screen.width/2 + Math.random()*50 -225}px;"><div id="${type}x"class="x">X</div><div id="${type}popup">${inner[type]}</div></div>`;
-		document.querySelector(`#${type}x`).addEventListener("click", function(){document.querySelector(`#${type}up`).remove();});
+		document.querySelector(`#${type}x`).addEventListener("click", function(){
+			inner[type] = document.querySelector(`#${type}popup`).innerHTML;
+			document.querySelector(`#${type}up`).remove();
+		});
 		if (type == "plate"){
 
 			for (let i = 0; i < 10; i++){
