@@ -1,6 +1,7 @@
 let id = null;
 let turn = false;
 let won = false;
+let connectfive = false;
 let board = [];
 let animation_done = true;
 let heights = [];
@@ -58,9 +59,15 @@ function play(c){
 	const element = document.getElementById("" + (heights[c]*7 + c))
 	won = isWon(heights[c], c);
 	dropdown(c);
-	if (won)
-		document.getElementById("winner_card").innerHTML = 
-			turn ? "Yellow Wins" : "Red Wins";
+	if (won){
+		if (connectfive){
+			document.getElementById("winner_card").innerHTML = "<a href='../BluRay/index.html'>For not the hearers of the law are just before God, but the doers of the law shall be justified</a>" 
+		}
+		else {
+			document.getElementById("winner_card").innerHTML = 
+				turn ? "Yellow Wins" : "Red Wins";
+		}
+	}
 	heights[c] += 1;
 	turn = !turn;
 }
@@ -75,6 +82,9 @@ function isWon(r, c){
 		directiveSearch(board[r][c], r, c, 1, 1) - 1;
 	let ld = directiveSearch(board[r][c], r, c, 1, -1) +
 		directiveSearch(board[r][c], r, c, -1, 1) -1;
+	if (ld == 5 || rd == 5 || ud == 5 || lr == 5){
+		connectfive = true;
+	}
 	return ld > 3 || rd > 3 || ud > 3 || lr > 3;
 
 }
