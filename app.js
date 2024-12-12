@@ -1,3 +1,5 @@
+
+sessionStorage.clear();
 const stick = '<div class="stick"></div>';
 const showstick= '<div class="showstick"></div>';
 const hole = '<div class="hole"></div>';
