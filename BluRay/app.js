@@ -43,8 +43,9 @@ function popup(type){
 			document.querySelector("#chdn").addEventListener("click", function(){changechannel(1);});
 		}
 		else if (type == "basket1"){
-			document.querySelector('.sm-cd-border').addEventListener("click", function(){document.querySelector('.sm-cd-border').style.visibility = "hidden"});
+			document.querySelector('.sm-cd-border').addEventListener("click", function(){document.querySelector('.sm-cd-border').style.visibility = "hidden";
 			sessionStorage.setItem("hasHBCD", true);
+			});
 		}
 		else if (type == "basket2"){
 		}
