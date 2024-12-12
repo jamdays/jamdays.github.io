@@ -14,4 +14,33 @@ ol, ul {
 	display: inline-block;
 	text-align: left;
 }
+.ontable {
+	margin: auto;
+	margin-top: 150px;
+	width: 1200px;
+	height: 300px;
+	display: flex;
+}
+.tabletop {
+	margin: auto;
+	width: 1200px;
+	height: 30px;
+	background-color: #592f1d;
+}
 
+.tablelegs {
+	margin: auto;
+	width: 1200px;
+	height: 400px;
+
+}
+.tableleg {
+
+}
+.carpet {
+	margin: auto;
+	margin-top -300px;
+	width: 1200px;
+	height: 500px;
+
+}
