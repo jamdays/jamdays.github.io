@@ -29,7 +29,7 @@ const QUOTES = [
 ]
 
 let k = Math.random()
-let quote_probs = [.99, .97, .87, .4, 0];
+let quote_probs = [.8, .6, .4, .2, 0];
 for (let i = 0; i < quote_probs.length; i++){
 	if (k > quote_probs[i]){
 		k = (quote_probs.length -1 - i);
