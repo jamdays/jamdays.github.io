@@ -35,7 +35,10 @@ k = 0;
 for (let i = 0; i < notes.length; i++){
 	let prev_k = k;
 	let note = notes[i];
-	if (Math.random() > .5){
+	if (Math.random() > .8){
+		if (Math.random() > .5){
+			k++;
+		}
 		k++;
 	}
 	let rando = Math.random();
