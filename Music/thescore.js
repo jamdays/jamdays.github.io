@@ -1,23 +1,16 @@
 const NOTES = [
-["Synthesizer", 
-"Moral of the story: Lapdance on your laptop while your laptop's in your lap. Onlyfans hard predict from this album. If you wanna synthisize I empathize. Individualism or something deep."],
-["Aquemnini", 
-"My mind warps and bends floats the wind count to ten " +
-"Meet the twin Andre Ben', welcome to the lion's den " +
-"Original skin, many men comprehend " +
-"I extend myself, so you go out and tell a friend " +
-"Sin all depends on what you believin' in " +
-"Faith is what you make it, that's the hardest shit since MC Ren " +
-"Alien can blend right on in wit' yo' kin " + 
-"Look again 'cause I swear I spot one every now and then "], 
-["Skew it on the Bar B", 
-'Old school player to new school fools. Basically Skibidi toilet summed up in a sentence, jk skibidi toilet is lowkey good'],
-["Chonkyfire", 
-"I got something to say"],
-["Yall Scared", 
-"Its not a problem until it affects whites"],
-["Liberation", 
-"Never gonna be free from whites no matter what you think. I mean not the point of the song but whatever. The point is actually way better. But idc honestly. Tired of listening to white ppls trash."]
+["Intro", 
+""],
+["Ready or Not", 
+""], 
+["Fu-Gee-La", 
+''],
+["Killing me Softly", 
+""],
+["The Mask", 
+""],
+["Outro", 
+""]
 ]
 
 const QUOTES = [
