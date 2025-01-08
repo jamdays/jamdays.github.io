@@ -1,4 +1,6 @@
+function claim(){
 
+}
 
 function clicked(id){
 	let elem = document.querySelector("#" + id)

@@ -1,0 +1,149 @@
+body {
+	background-color:#e3e0c1;
+	text-align: center;
+}
+p, h1, h2, h3, h4, h5, h6, li  {
+	font-family: courier;
+	color: #768c7c;
+}
+a {
+	font-family: courier;
+	color: #6682ad;
+}
+ol, ul {
+	display: inline-block;
+	text-align: left;
+}
+input {
+	font-family: courier;
+	color: #768c7c;
+	background-color: #eedfbf;
+	border-color: #427e87;
+	border-width: 5px;
+
+	
+}
+.center {
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	text-align: center;
+}
+section {
+	display: flex;
+	background-color: #A1662F;
+	width: 1000px;
+	height: 500px;
+	margin: auto;
+	margin-top: 50px;
+	padding: 10px;
+}
+.boggleboard{
+	background-color: #427e87;
+	padding: 10px;
+	margin: 10px;
+	width: 440px;
+	height: 440px;
+	display: grid;
+	border-radius: 40px;
+	grid-template-columns: repeat(4, auto);
+}
+.cell{
+	border-radius: 25px;
+	color: #427e87;
+	width: 100px;
+	height: 100px;
+	background-color: #eedfbf;
+	margin: 5px;
+	text-align: center;
+	font-size: 50px;
+	line-height: 100px;
+	font-weight: 600;
+}
+.paper {
+	font-family: courier;
+	color: #768c7c;
+	rotate: -10deg; 
+	background-color: #f2eecb;
+	width: 300px;
+	margin: auto;
+	height: 400px;
+}
+.board {
+	margin: auto;
+	width: 500px;
+	height: 500px;
+}
+
+.background-board {
+	margin: auto;
+	width: 0px;
+	height: 0px;
+	border-right: 280px solid transparent;
+	border-left: 280px solid transparent;
+	border-bottom: 500px solid #4d291d;
+	margin-bottom: -475px;
+	margin-top: 100px;
+}
+
+.background-board-border {
+	margin: auto;
+	width: 0px;
+	height: 0px;
+	border-right: 291px solid transparent;
+	border-left: 291px solid transparent;
+	border-bottom: 520px solid #A1662F;
+	margin-bottom: -475px;
+	margin-top: 100px;
+	z-index: -1;
+}
+
+.row {
+	width: 500px;
+	height: 100px;
+	display: flex;
+	flex-direction: horizontal;
+	justify-content: center;
+}
+
+.peg {
+	width: 100px;
+	height: 100px;
+
+
+}
+
+.stick {
+	margin: auto;
+	margin-top: 15px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	border: solid;
+	background-color: #027032;
+	border-color: #003d1b;
+}
+
+.showstick {
+	margin: auto;
+	margin-top: 15px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	border: solid;
+	background-color: #027032;
+	border-color: #003d1b;
+	opacity: .5;
+}
+
+.hole {
+	margin: auto;
+	margin-top: 15px;
+	width: 25px;
+	height: 25px;
+	border-radius: 25px;
+	border: solid;
+	background-color: #6b3929;
+	border-color: #4d291d;
+}
+
