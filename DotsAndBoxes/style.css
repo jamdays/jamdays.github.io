@@ -41,6 +41,22 @@ ol, ul {
 	width: 100px;
 	background-color: #cccccc;
 }
+.x {
+	height: 90px;
+	width: 90px;
+	clip-path: polygon(0% 0%, 15% 0%, 50% 40%, 85% 0%, 100% 0%, 60% 50%, 100% 100%, 85% 100%, 50% 60%, 15% 100%, 0% 100%, 40% 50%);
+	background-color: #757575;
+	margin: auto;
+	margin-top: 5px;
+}
+.o {
+	border-radius: 50%;
+	height: 73px;
+	width: 73px;
+	border: 12px solid #757575;
+	margin: auto;
+	margin-top: 2px;
+}
 .vline {
 	height: 100px;
 	width: 20px;
