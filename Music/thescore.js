@@ -10,7 +10,7 @@ const NOTES = [
 ["Outro 2", 
 "Best outro out of any album I've heard, it sounds like its real, not just trying to be deep, and it hits. Its the dogs you gotta worry about. I know who the dogs are. Not gonna be kicked by them one more time"],
 ["Manifest", 
-"Sorry to my first girlfriend, I think of her every time I hear lauryn's verse <br> White ppl are judas. Also I didn't know who Halie Selassie was until my mom told me"],
+"Dont lose the vision. <br> White ppl are judas. Also I didn't know who Halie Selassie was until my mom told me"],
 ]
 
 const QUOTES = [
