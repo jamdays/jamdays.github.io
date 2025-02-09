@@ -9,11 +9,11 @@ let played = [new Set(), new Set()];
 let won = false;
 for (let i = -1; i < 12; i++){
 	for (let j = -1; j < 12; j++){
-		if (j == 10){
+		if (j == 10 && i != 11 && i != -1){
 			union(i*11 + j, 121, turn);
 			union(i*11, 122, turn);
 		}
-		if (i == 10){
+		if (i == 10 && j != 11 && j != -1){
 			union(i*11 + j, 121, turn + 1);
 			union(j, 122, turn + 1);
 		}
@@ -24,12 +24,12 @@ for (let i = -1; i < 12; i++){
 				
 			}
 			else {
-				document.querySelector(`#row${i}`).innerHTML += `<div class="pcell" id="${i*11 + j}"></div>`;
+				document.querySelector(`#row${i}`).innerHTML += `<div class="pcell"></div>`;
 				document.querySelector(`#row${i}`).style.marginLeft = `${i*25}px`;
 			}
 		}
 		else {
-			document.querySelector(`#row${i}`).innerHTML += `<div class="bcell" id="${i*11 + j}"></div>`;
+			document.querySelector(`#row${i}`).innerHTML += `<div class="bcell"></div>`;
 			document.querySelector(`#row${i}`).style.marginLeft = `${i*25}px`;
 		}
 	}
