@@ -7,8 +7,8 @@ let ufb = {121: -1, 122: -1};
 let uf = [ufa, ufb]
 let played = [new Set(), new Set()];
 let won = false;
-for (let i = 0; i < 11; i++){
-	for (let j = 0; j < 11; j++){
+for (let i = -1; i < 12; i++){
+	for (let j = -1; j < 12; j++){
 		if (j == 10){
 			union(i*11 + j, 121, turn);
 			union(i*11, 122, turn);
@@ -17,8 +17,21 @@ for (let i = 0; i < 11; i++){
 			union(i*11 + j, 121, turn + 1);
 			union(j, 122, turn + 1);
 		}
-		document.querySelector(`#row${i}`).innerHTML += `<div class="cell" id="${i*11 + j}"></div>`;
-		document.querySelector(`#row${i}`).style.marginLeft = `${i*25}px`;
+		if (i > -1 && i < 11){
+			if (j > -1 && j < 11){
+				document.querySelector(`#row${i}`).innerHTML += `<div class="cell" id="${i*11 + j}"></div>`;
+				document.querySelector(`#row${i}`).style.marginLeft = `${i*25}px`;
+				
+			}
+			else {
+				document.querySelector(`#row${i}`).innerHTML += `<div class="pcell" id="${i*11 + j}"></div>`;
+				document.querySelector(`#row${i}`).style.marginLeft = `${i*25}px`;
+			}
+		}
+		else {
+			document.querySelector(`#row${i}`).innerHTML += `<div class="bcell" id="${i*11 + j}"></div>`;
+			document.querySelector(`#row${i}`).style.marginLeft = `${i*25}px`;
+		}
 	}
 }
 
