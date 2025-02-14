@@ -1,0 +1,64 @@
+body {
+	background-color:#e3e0c1;
+	text-align: center;
+}
+p, h1, h2, h3, h4, h5, h6, li  {
+	font-family: courier;
+	color: #768c7c;
+}
+a {
+	font-family: courier;
+	color: #6682ad;
+}
+ol, ul {
+	display: inline-block;
+	text-align: left;
+}
+
+.cell {
+	height: 44px;
+	width: 44px;
+	clip-path: polygon(50% 100%, 100% 75%, 100% 25%, 50% 0%, 0% 25%, 0% 75%);
+	margin-left: 3px;
+	margin-right: 3px;
+	background-color: #ffffdd;
+}
+.pcell {
+	height: 44px;
+	width: 44px;
+	clip-path: polygon(50% 100%, 100% 75%, 100% 25%, 50% 0%, 0% 25%, 0% 75%);
+	margin-left: 3px;
+	margin-right: 3px;
+	background-color: #701a68;
+}
+.bcell {
+	height: 44px;
+	width: 44px;
+	clip-path: polygon(50% 100%, 100% 75%, 100% 25%, 50% 0%, 0% 25%, 0% 75%);
+	margin-left: 3px;
+	margin-right: 3px;
+	background-color: #24467d;
+}
+.row {
+	height: 50px;
+	width: 600px;
+	display: flex;
+	margin-bottom: -10px;
+
+}
+
+#board {
+	margin: auto;
+	width: 800px;
+	height: 450px;
+	margin-bottom: 300px;
+}
+
+
+#wincard {
+	height: 100px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+
