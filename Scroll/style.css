@@ -2,6 +2,11 @@ body {
 	background-color:#e3e0c1;
 	text-align: center;
 }
+/* hide page scrollbar */
+html { scrollbar-width: none; } /* Firefox */
+body { -ms-overflow-style: none; } /* IE and Edge */
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; } /* Chrome */
+/* end hide page scrollbar */
 p, h1, h2, h3, h4, h5, h6, li  {
 	font-family: courier;
 	color: #768c7c;
@@ -60,5 +65,46 @@ ol, ul {
 	margin: auto;
 	margin-bottom: 10px;
 }
+#china {
+	margin: auto;
+	margin-top: 100000px;
+	background-color: black;
+	height: 300px;
+	width: 300px;
+}
+.achievement-barbar{
+	/*babar*/
+	width: 100%;
+	
+}
+.achievement-bar{
+	margin: auto;
+	margin-top: 5px;
+	display: flex;
+	flex: horizontal;
+	height: 100px;
+	width: 1000px;
+
+}
+.achievement{
+	display: flex;
+	height: 100px;
+	width: 500px;
+	margin-left: 5px;
+
+}
+.achievement-img{
+	height: 100px;
+	width: 100px;
+	background-color: black;
+
+}
+.achievement-blurb{
+	height: 100px;
+	width: 400px;
+	background-color: white;
+
+}
+
 
 
