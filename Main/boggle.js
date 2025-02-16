@@ -44,8 +44,8 @@ let mat244 = [1, "JSON Beef ken lunch"];
 let csc258 = [1, "Fun"];
 let mat157 = [1, "Fun"];
 let goodish = [1, "MAT224, CSC207, MAT344"];
-let lightsout = [1, '<a href="../LightsOut/index.html">Lights Out</a>'];
-let cattrap = [1, '<a href="../CatTrap/index.html">Cat Trap Game</a>'];
+let lightsout = [1, '<a href="../Main/lightsout.html">Lights Out</a>'];
+let cattrap = [1, '<a href="../Main/cattrap.html">Cat Trap Game</a>'];
 let recommended = [2, "Coup, Resistance, <br> Extreme Tux Racer"];
 let green = [1, "Green"]
 let flip = [1, "Flip"]
@@ -174,6 +174,7 @@ function printwd(arr){
 function checkWord() {
 	let userInput = document.querySelector("#wordGuess").value;
 	if (userInput == "ls -a"){
+		sessionStorage.setItem("terminal", true);
 		space_used += 1;
 		paper[paper_count].innerHTML += userInput + "<br>" ;
 		paper[paper_count].innerHTML += lsa(pwd, 0, dirs) + "<br>" ;
@@ -181,6 +182,7 @@ function checkWord() {
 		
 	}
 	if (userInput == "ls"){
+		sessionStorage.setItem("terminal", true);
 		space_used += 1;
 		paper[paper_count].innerHTML += userInput + "<br>" ;
 		paper[paper_count].innerHTML += ls(pwd, 0, dirs) + "<br>" ;
@@ -192,6 +194,7 @@ function checkWord() {
 			cd(pwd, 0, dirs, userInput.substring(3).split("/"));
 			space_used += 1;
 			paper[paper_count].innerHTML += userInput + "<br>" ;
+			sessionStorage.setItem("terminal", true);
 		}
 		catch (ReferenceError) { 
 		}
@@ -203,6 +206,7 @@ function checkWord() {
 			space_used += out[0] + 1;
 			paper[paper_count].innerHTML += userInput + "<br>" ;
 			paper[paper_count].innerHTML += out[1] + "<br>";
+			sessionStorage.setItem("terminal", true);
 		}
 		catch (ReferenceError) { 
 		}

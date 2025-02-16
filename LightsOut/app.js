@@ -37,6 +37,7 @@ function refresh(){
 	}
 	won = isWon;
 	if(won){
+		sessionStorage.setItem("lightsout", true);
 		document.getElementById("titlecard").innerHTML = "<p><b>Untitled, 1982, Jean Michel Basquiat</b></p>";
 	}
 

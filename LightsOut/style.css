@@ -21,7 +21,7 @@ ol, ul {
 	width: 800px;
 	display: grid;
 	grid-template-columns: repeat(8, auto);
-	background-image: url("./images/untitled/Untitled.png");
+	background-image: url("../LightsOut/images/untitled/Untitled.png");
 	background-color: #cccccc;
 }
 
