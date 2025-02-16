@@ -94,15 +94,16 @@ ol, ul {
 
 }
 .achievement-img{
-	height: 100px;
-	width: 100px;
+	height: 0px;
+	width: 0px;
 	background-color: black;
 
 }
 .achievement-blurb{
 	height: 100px;
-	width: 400px;
-	background-color: white;
+	width: 500px;
+	background-color: black;
+	opacity: .5;
 
 }
 

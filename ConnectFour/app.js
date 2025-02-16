@@ -68,6 +68,17 @@ function play(c){
 				turn ? "Yellow Wins" : "Red Wins";
 		}
 	}
+	if (!won){
+		for (let i = 0; i < heights.length; i++){
+			drawn = true;
+			if (heights[i] != board.length){
+				drawn = false;
+			}
+		}
+	}
+	if (drawn){
+		sessionStorage.setItem("connectdraw", true);
+	}
 	heights[c] += 1;
 	turn = !turn;
 }
@@ -84,6 +95,15 @@ function isWon(r, c){
 		directiveSearch(board[r][c], r, c, -1, 1) -1;
 	if (ld == 5 || rd == 5 || ud == 5 || lr == 5){
 		connectfive = true;
+	}
+	if (ud > 3){
+		sessionStorage.setItem("connectup", true);
+	}
+	if (ld == 7 || rd == 7 || ud == 7 || lr == 7){
+		sessionStorage.setItem("connectseven", true);
+	}
+	if (ld == 6 || rd == 6 || ud == 6 || lr == 6){
+		sessionStorage.setItem("connectsix", true);
 	}
 	return ld > 3 || rd > 3 || ud > 3 || lr > 3;
 
