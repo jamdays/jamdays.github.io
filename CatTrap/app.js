@@ -57,6 +57,7 @@ function play(r, c){
 function move(){
 	if (cat[0] == 0 || cat[0] == (board.length - 1) || cat[1] == 0 || cat[1] == (board[0].length -1)){
 		done = true;
+		sessionStorage.setItem("freediddy", true);
 		document.getElementById("wincard").innerHTML = '<div id="cat"><div class="forehead"></div>&#9673&#9181&#9673<br/> </div>'; 
 		document.getElementById(`(${cat[0]},${cat[1]})`).innerHTML = '';
 		return false;

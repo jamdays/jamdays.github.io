@@ -61,7 +61,7 @@ function play(c){
 	dropdown(c);
 	if (won){
 		if (connectfive){
-			document.getElementById("winner_card").innerHTML = "<a href='../BluRay/index.html'>For not the hearers of the law are just before God, but the doers of the law shall be justified</a>" 
+			document.getElementById("winner_card").innerHTML = "<a href='../Main/bluray.html'>For not the hearers of the law are just before God, but the doers of the law shall be justified</a>" 
 		}
 		else {
 			document.getElementById("winner_card").innerHTML = 

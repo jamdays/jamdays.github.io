@@ -1,5 +1,4 @@
 if (sessionStorage.getItem("connectsix") == "true"){
-	console.log("hello");
 	document.querySelector("#connectsix").style += "opacity: .9; background-color: white;"
 }
 if (sessionStorage.getItem("connectseven") == "true"){
@@ -11,3 +10,7 @@ if (sessionStorage.getItem("connectdraw") == "true"){
 if (sessionStorage.getItem("connectup") == "true"){
 	document.querySelector("#connectup").style += "opacity: .9; background-color: white;"
 }
+if (sessionStorage.getItem("tvman") == "true"){
+	document.querySelector("#tvman").style += "opacity: .9; background-color: white;"
+}
+//MAKE SURE TO MOVE CAT TRAP AND LIGHTS OUT SO THAT THE ACHIEVEMENTS WORK

@@ -1,9 +1,10 @@
-let channels = ["cyberchase.mp4", "fetch.mp4"];
+let channels = ["../BluRay/cyberchase.mp4", "../BluRay/fetch.mp4"];
 let currchannel = 0;
+sessionStorage.setItem("tvman", true);
 
 function cdplay(){
 	if (sessionStorage.getItem("hasHBCD") == "true"){
-		document.querySelector("video").src = "holybaby.mp4";
+		document.querySelector("video").src = "../BluRay/holybaby.mp4";
 	}
 }
 
