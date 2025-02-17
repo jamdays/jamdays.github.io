@@ -22,4 +22,7 @@ if (sessionStorage.getItem("freediddy") == "true"){
 if (sessionStorage.getItem("terminal") == "true"){
 	document.querySelector("#terminal").style += "opacity: .9; background-color: white;"
 }
+if (sessionStorage.getItem("blocki") == "true"){
+	document.querySelector("#bloki").style += "opacity: .9; background-color: white;"
+}
 //MAKE SURE TO MOVE CAT TRAP AND LIGHTS OUT SO THAT THE ACHIEVEMENTS WORK

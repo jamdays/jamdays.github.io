@@ -134,6 +134,9 @@ function winMessage(){
 		}
 	}
 	if (won){
+		if (scores[0] + scores[1] + scores[2] + scores[3] == 376){
+			sessionStorage.setItem("bloki", true);
+		}
 		return "DONE: RED: " + scores[0].toString() + " BLUE: " + scores[1].toString() + " YELLOW: " + scores[2].toString() + " GREEN: " + scores[3].toString();
 	}
 	return "RED: " + scores[0].toString() + " BLUE: " + scores[1].toString() + " YELLOW: " + scores[2].toString() + " GREEN: " + scores[3].toString();
