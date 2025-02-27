@@ -25,4 +25,9 @@ if (sessionStorage.getItem("terminal") == "true"){
 if (sessionStorage.getItem("blocki") == "true"){
 	document.querySelector("#bloki").style += "opacity: .9; background-color: white;"
 }
-//MAKE SURE TO MOVE CAT TRAP AND LIGHTS OUT SO THAT THE ACHIEVEMENTS WORK
+if (sessionStorage.getItem("wallbuster") == "true"){
+	document.querySelector("#wallbuster").style += "opacity: .9; background-color: white;"
+}
+if (sessionStorage.getItem("XXX") == "true"){
+	document.querySelector("#XXX").style += "opacity: .9; background-color: white;"
+}

@@ -128,6 +128,11 @@ function can_move(x, y){
 	return x[0] > -1 && x[1] > -1 && y[0] > -1 && y[1] > -1 && x[0] < 9 && x[1] < 9 && y[0] < 9 && y[1] < 9 && canVisit(x, y);
 }
 function isWon(){
+	if (p_pos[false][0] == 0 || p_pos[true][0] == 8){
+		if (document.getElementsByClassName("wall_o").length == 10 || document.getElementsByClassName("wall_t").length == 10){
+			sessionStorage.setItem("wallbuster", true);
+		}
+	}
 	return p_pos[false][0] == 0 || p_pos[true][0] == 8;
 }
 function placeWall(id){

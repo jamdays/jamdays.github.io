@@ -69,6 +69,12 @@ function playMove(k){
 	}
 	if (find(121, 121, turn) == find(122, 122, turn)){
 		document.querySelector("#wincard").innerHTML = `<p>${turn == 1 ? "Blue": "Purple"} won</p>`
+		if (turn == 1){
+			sessionStorage.setItem("bluewin", true);
+		}
+		else {
+			sessionStorage.setItem("purplewin", true);
+		}
 		won = true;
 	}
 	turn = (turn + 1) % 2;

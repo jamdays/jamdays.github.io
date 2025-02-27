@@ -1,4 +1,6 @@
 let turn = true;
+let xs = 0;
+let os = 0;
 
 function tryclaim(n){
 	let sub = 4 + (n%10 - 4)/2
@@ -9,6 +11,12 @@ function tryclaim(n){
 		document.querySelector("#a" + (n-sub)).style.backgroundColor ==  "rgb(117, 117, 117)" &&
 		document.querySelector("#a" + (n+add)).style.backgroundColor ==  "rgb(117, 117, 117)"){
 		let entry = turn ? "o" : "x";
+		if (turn){
+			os++;
+		}
+		else {
+			xs++;
+		}
 		document.querySelector("#a" + n.toString()).innerHTML += `<div class="${entry}"></div>`;
 		return true;
 	}
@@ -47,7 +55,20 @@ function clicked(id){
 			turn = !turn;
 		}
 	}
+	if (isWon() && xs == 9){
+		sessionStorage.setItem("XXX", true);
+	}
 	turn = !turn;
+}
+
+function isWon(){
+	let boxes = document.getElementsByClassName("box");
+	for (let i = 0; i < boxes.length; i++){
+		if (boxes[i].innerHTML == ""){
+			return false;
+		}
+	}
+	return true;
 }
 
 let vlines = document.getElementsByClassName("vline");
