@@ -30,7 +30,7 @@ let dictionary = new Set(words);
 let used = new Set();
 let n = kStandardCubes.length;
 let albums2024 = [7, "<br>Best Albums of 2024 <br> 1. BLUE LIPS <br> 2. gnx <br> 3. #RICHAXXHATIAN  <br> Honorable Mentions: KOTMS V 2, <br> I LAY DOWN MY LIFE FOR YOU <br>"];
-let albums2016 = [7, "<br>Best Albums of 2016 <br> 1. TLOP <br> 2. Blank Face <br> 3. Still Brazy <br> Honorable Mentions: FLYGOD and Atrocity Exhibition"];
+let albums2016 = [8, "<br>Best Albums of 2016 <br> 1. TLOP <br> 2. Blank Face <br> 3. Still Brazy <br> Honorable Mentions: JEFFERY, Slime Season 3 <br> FLYGOD, and Atrocity Exhibition"];
 let hiddenfile = [1, "<br>Live By Yo Rep, On That Time, Twist My Fingaz"];
 let farmsBurner = [2, "<br>Fun game in progress <br> open weather api pulls"];
 let website = [1, '<a href="https://jamdays.github.io/">#1</a>'];
@@ -53,10 +53,10 @@ let single = [1, "Single"]
 let use = [1, "list files - all at"]
 let where = [1, "home"]
 let lyrics = [5, "They don't wanna see the wanted man, <br> coming through with the gun in hand <br> <br> Rap been so good to me <br> I hope it gets me cancelled"]
-let Albums2016 = {'"The Life of Pablo"':{}, '"untitled unmastered"':{}, '"Blank Face LP"':{"words.txt": use}, '"Atrocity Exhibition"':{}, "FLYGOD":{}, '"Still Brazy"':{"word.txt": single}};
+let Albums2016 = {'"The Life of Pablo"':{}, '"untitled unmastered"':{}, '"Blank Face LP"':{"words.txt": use}, '"Atrocity Exhibition"':{}, "FLYGOD":{}, '"Still Brazy"':{"word.txt": single}, "JEFFERY":{}, "Slime Season 3":{}};
 let Other = {"4:44":{}, "DAMN.":{}, "Die Lit":{}, "TA13OO":{}, "DAYTONA":{}, '"KIDS SEE GHOSTS"': {}, "ye":{}, '"Victory Lap"':{}, "Redemption":{}, '"Hiding Places"':{}, '"All My Heros Are Cornballs"':{"word.txt": where}, '"Whole Lotta Red"':{"word.txt": flip}};
 let Downloads = {"Southernplayalisticcadillacmuzik": {}, "Illmatic": {}, '"Mystic Stylez"':{"word.txt": flip}, '"Me Against The World"':{}, '"The Don Killuminati"':{}, '"All Eyez On Me"':{}, '"ATLiens"':{}, '"The Score"':{}, 
-'"Its Dark and Hell is Hot"':{}, "Aquemini":{}, '"The Miseducation of Lauryn Hill"':{}, '"Things Fall Apart"':{}};
+'"Its Dark and Hell is Hot"':{}, "Aquemini":{}, '"The Miseducation of Lauryn Hill"':{}, '"Things Fall Apart"':{}, '"E. 1999 Eternal"':{}, '"Only Built 4 Cuban Linx"':{}, '"The End"':{}};
 let School = {"UofT": {'"Trash Classes"': {"MAT244.txt": mat244, "CSC240.txt": csc240} , '"Good Classes"': {"mat157.txt": mat157 , "csc258.txt": csc258}, "goodish.txt": goodish}, 
 "Gorman": {"Poems": {"TygerTyger.txt": tygertyger, "EuclidAlone.txt": euclid , "Jabberwocky.txt": jabberwocky}, "LinearAlgebra.txt": linearAlgebra, "Multi.txt": multivariable}}; 
 let Projects = {"FarmsBurner.txt" : farmsBurner, "Website.txt": website};
