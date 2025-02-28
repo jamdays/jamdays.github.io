@@ -34,3 +34,18 @@ if (sessionStorage.getItem("XXX") == "true"){
 if (sessionStorage.getItem("bluewin") == "true" || sessionStorage.getItem("purplewin") == "true"){
 	document.querySelector("#hex").style += "opacity: .9; background-color: white;"
 }
+if (albms){
+	document.querySelector("#crazyeights").style += "opacity: .9; background-color: white;"
+}
+
+
+function albms(){
+	let albums = ["late registration", "yeezus", "aquemini", "kids see ghosts", "the score", "the eminem show", "good kid maad city", "808s and heartbreak", "my beautiful dark twisted fantasy"];
+
+	for (int i = 0; i < albums.length; i++){
+		if (sessionStorage.getItem(album) == "true"){
+			return true;
+		}
+	}
+	return false;
+}
