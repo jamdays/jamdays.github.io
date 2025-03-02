@@ -37,7 +37,7 @@ if (sessionStorage.getItem("bluewin") == "true" || sessionStorage.getItem("purpl
 if (sessionStorage.getItem("botsanddoxes") == "true" || sessionStorage.getItem("purplewin") == "true"){
 	document.querySelector("#botsanddoxes").style += "opacity: .9; background-color: white;"
 }
-if (albms){
+if (albms()){
 	document.querySelector("#crazyeights").style += "opacity: .9; background-color: white;"
 }
 
@@ -45,7 +45,7 @@ if (albms){
 function albms(){
 	let albums = ["late registration", "yeezus", "aquemini", "kids see ghosts", "the score", "the eminem show", "good kid maad city", "808s and heartbreak", "my beautiful dark twisted fantasy"];
 
-	for (int i = 0; i < albums.length; i++){
+	for (let i = 0; i < albums.length; i++){
 		if (sessionStorage.getItem(album) == "true"){
 			return true;
 		}
