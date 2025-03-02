@@ -1,5 +1,5 @@
 let turn = true;
-
+sessionStorage.setItem("botsanddoxes", true);
 function tryclaim(n){
 	let sub = 4 + (n%10 - 4)/2
 	let add = 6 - (n%10 - 4)/2

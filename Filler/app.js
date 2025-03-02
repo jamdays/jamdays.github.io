@@ -1,5 +1,8 @@
 let board = []; 
-let colors = ["#dae0d5", "#bed4d4", "#95cccc", "#71adc9", "#6d93d1", "#2d579c"];
+let blues = ["#dae0d5", "#bed4d4", "#95cccc", "#71adc9", "#6d93d1", "#2d579c"];
+let purples = ["#3b1257", "#601791", "#9a39db", "#a557d9", "#774b94", "#c092de"];
+let greens = ["#08521e", "#1b6130", "#377349", "#299148", "#17a642", "#139605"];
+let colors = blues;
 let width = 8;
 let height = 7;
 let score = {0: 1, 1: 1};

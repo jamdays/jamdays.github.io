@@ -34,6 +34,9 @@ if (sessionStorage.getItem("XXX") == "true"){
 if (sessionStorage.getItem("bluewin") == "true" || sessionStorage.getItem("purplewin") == "true"){
 	document.querySelector("#hex").style += "opacity: .9; background-color: white;"
 }
+if (sessionStorage.getItem("botsanddoxes") == "true" || sessionStorage.getItem("purplewin") == "true"){
+	document.querySelector("#botsanddoxes").style += "opacity: .9; background-color: white;"
+}
 if (albms){
 	document.querySelector("#crazyeights").style += "opacity: .9; background-color: white;"
 }
