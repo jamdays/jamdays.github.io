@@ -31,6 +31,9 @@ if (sessionStorage.getItem("wallbuster") == "true"){
 if (sessionStorage.getItem("XXX") == "true"){
 	document.querySelector("#XXX").style += "opacity: .9; background-color: white;"
 }
+if (sessionStorage.getItem("sigma") == "true"){
+	document.querySelector("#sigma").style += "opacity: .9; background-color: white;"
+}
 if (sessionStorage.getItem("bluewin") == "true" || sessionStorage.getItem("purplewin") == "true"){
 	document.querySelector("#hex").style += "opacity: .9; background-color: white;"
 }
