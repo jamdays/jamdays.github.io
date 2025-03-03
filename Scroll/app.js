@@ -1,3 +1,17 @@
+
+window.onscroll = function(ev) {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+	sessionStorage.setItem("peking", true)
+	console.log("BOTTOM");
+	if (sessionStorage.getItem("peking") == "true"){
+		document.querySelector("#peking").style += "opacity: .9; background-color: white;"
+	}
+  }
+};
+
+if (sessionStorage.getItem("peking") == "true"){
+	document.querySelector("#peking").style += "opacity: .9; background-color: white;"
+}
 if (sessionStorage.getItem("connectsix") == "true"){
 	document.querySelector("#connectsix").style += "opacity: .9; background-color: white;"
 }
@@ -49,7 +63,7 @@ function albms(){
 	let albums = ["late registration", "yeezus", "aquemini", "kids see ghosts", "the score", "the eminem show", "good kid maad city", "808s and heartbreak", "my beautiful dark twisted fantasy"];
 
 	for (let i = 0; i < albums.length; i++){
-		if (sessionStorage.getItem(album) == "true"){
+		if (sessionStorage.getItem(albums[i]) == "true"){
 			return true;
 		}
 	}
